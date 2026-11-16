@@ -1,0 +1,160 @@
+[
+  {
+    "query_id": "q16",
+    "question": "In the Errors and Exceptions chapter, when does the optional else clause of try-except execute?",
+    "hit1": false,
+    "hit3": false,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "cbd62b0b-f04e-52a5-af10-1ec884ba2f5d",
+        "source": "errors",
+        "page": 2,
+        "score": 0.03252247488101534
+      },
+      {
+        "id": "ebae0865-a2da-5af9-a247-0a0713bb6651",
+        "source": "errors",
+        "page": 5,
+        "score": 0.03149801587301587
+      },
+      {
+        "id": "3edb80d2-11e0-5ee2-9fb3-b3b4a8e73ceb",
+        "source": "errors",
+        "page": 2,
+        "score": 0.03125763125763126
+      }
+    ],
+    "context_ids": [
+      "cbd62b0b-f04e-52a5-af10-1ec884ba2f5d"
+    ],
+    "latency_ms": 74.71960000111721
+  },
+  {
+    "query_id": "q17",
+    "question": "If a try block raises an unhandled exception, does finally run before the exception is re-raised?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true,
+    "results": [
+      {
+        "id": "ebae0865-a2da-5af9-a247-0a0713bb6651",
+        "source": "errors",
+        "page": 5,
+        "score": 0.03252247488101534
+      },
+      {
+        "id": "cbd62b0b-f04e-52a5-af10-1ec884ba2f5d",
+        "source": "errors",
+        "page": 2,
+        "score": 0.03200204813108039
+      },
+      {
+        "id": "1340902f-e887-5ba3-ba38-0b52431398d6",
+        "source": "errors",
+        "page": 5,
+        "score": 0.031544957774465976
+      }
+    ],
+    "context_ids": [
+      "ebae0865-a2da-5af9-a247-0a0713bb6651",
+      "1340902f-e887-5ba3-ba38-0b52431398d6"
+    ],
+    "latency_ms": 73.38909999816678
+  },
+  {
+    "query_id": "q18",
+    "question": "In the Classes chapter, how do instance variables differ from class variables in what they share?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true,
+    "results": [
+      {
+        "id": "3e7839a6-f2d3-591e-9457-f668bdcc89c5",
+        "source": "classes",
+        "page": 6,
+        "score": 0.03252247488101534
+      },
+      {
+        "id": "c9ca3015-7867-5698-96cd-cc04ef14c5ad",
+        "source": "classes",
+        "page": 5,
+        "score": 0.03125763125763126
+      },
+      {
+        "id": "8a6e3b08-45fd-5c96-9c67-db40d9bc6fb7",
+        "source": "classes",
+        "page": 2,
+        "score": 0.030309988518943745
+      }
+    ],
+    "context_ids": [
+      "3e7839a6-f2d3-591e-9457-f668bdcc89c5",
+      "c9ca3015-7867-5698-96cd-cc04ef14c5ad"
+    ],
+    "latency_ms": 74.73259999824222
+  },
+  {
+    "query_id": "q19",
+    "question": "Does Python provide instance variables accessible only from inside an object, and what does a single leading underscore mean?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true,
+    "results": [
+      {
+        "id": "f79b8447-5984-5df4-b0f1-b5d48803d927",
+        "source": "classes",
+        "page": 10,
+        "score": 0.03278688524590164
+      },
+      {
+        "id": "3e7839a6-f2d3-591e-9457-f668bdcc89c5",
+        "source": "classes",
+        "page": 6,
+        "score": 0.030798389007344232
+      },
+      {
+        "id": "29e5f93b-c9cf-5aba-817d-5f4481913854",
+        "source": "classes",
+        "page": 10,
+        "score": 0.02964426877470356
+      }
+    ],
+    "context_ids": [
+      "f79b8447-5984-5df4-b0f1-b5d48803d927",
+      "3e7839a6-f2d3-591e-9457-f668bdcc89c5"
+    ],
+    "latency_ms": 72.77099999191705
+  },
+  {
+    "query_id": "q20",
+    "question": "Which exception does an exhausted Python iterator raise to terminate a for loop?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true,
+    "results": [
+      {
+        "id": "37ebb14c-e66a-5843-8768-a58f526220d5",
+        "source": "classes",
+        "page": 12,
+        "score": 0.03278688524590164
+      },
+      {
+        "id": "0a90649a-f606-564b-97e8-414261bd26eb",
+        "source": "classes",
+        "page": 12,
+        "score": 0.031754032258064516
+      },
+      {
+        "id": "4c1f51d4-c2b8-5000-916f-2024a408d18d",
+        "source": "controlflow",
+        "page": 2,
+        "score": 0.030303030303030304
+      }
+    ],
+    "context_ids": [
+      "37ebb14c-e66a-5843-8768-a58f526220d5"
+    ],
+    "latency_ms": 72.56839999172371
+  }
+]

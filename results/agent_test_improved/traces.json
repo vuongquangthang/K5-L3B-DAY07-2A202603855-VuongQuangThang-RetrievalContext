@@ -1,0 +1,973 @@
+[
+  {
+    "query_id": "q16",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "Errors and Exceptions try except else clause execute",
+        "filter": {
+          "section": "Errors and Exceptions"
+        },
+        "results": [
+          {
+            "id": "cbd62b0b-f04e-52a5-af10-1ec884ba2f5d",
+            "source_id": "errors",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst",
+            "page": 2,
+            "text": "* If an exception occurs during execution of the try clause, the rest of the clause is skipped. Then, if its type matches the exception named after the except keyword, the *except clause* is executed, and then execution continues after the try/except block.\n\n* If an exception occurs which does not match the exception named in the *except clause*, it is passed on to outer try statements; if no handler is found, it is an *unhandled exception* and execution stops with an error message.\n\nA try statement may have more than one *except clause*, to specify handlers for different exceptions. At most one handler will be executed. Handlers only handle exceptions that occur in the corresponding *try clause*, not in other handlers of the same !try statement. An *except clause* may name multiple exceptions as a parenthesized tuple, for example::",
+            "metadata": {
+              "section": "Errors and Exceptions",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 868,
+              "end": 1712
+            },
+            "score": 0.032266458495966696,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "ebae0865-a2da-5af9-a247-0a0713bb6651",
+            "source_id": "errors",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst",
+            "page": 5,
+            "text": ">>> try: ... raise KeyboardInterrupt ... finally: ... print('Goodbye, world!') ... Goodbye, world! Traceback (most recent call last): File \"<stdin>\", line 2, in <module> raise KeyboardInterrupt KeyboardInterrupt\n\nIf a finally clause is present, the !finally clause will execute as the last task before the try statement completes. The !finally clause runs whether or not the !try statement produces an exception. The following points discuss more complex cases when an exception occurs:\n\n* If an exception occurs during execution of the !try clause, the exception may be handled by an except clause. If the exception is not handled by an !except clause, the exception is re-raised after the !finally clause has been executed.\n\n* An exception could occur during execution of an !except or !else clause. Again, the exception is re-raised after the !finally clause has been executed.",
+            "metadata": {
+              "section": "Errors and Exceptions",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1545,
+              "end": 2425
+            },
+            "score": 0.031544957774465976,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "3edb80d2-11e0-5ee2-9fb3-b3b4a8e73ceb",
+            "source_id": "errors",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst",
+            "page": 2,
+            "text": "bltin-exceptions lists the built-in exceptions and their meanings.\n\nHandling Exceptions\n\nIt is possible to write programs that handle selected exceptions. Look at the following example, which asks the user for input until a valid integer has been entered, but allows the user to interrupt the program (using Control-C or whatever the operating system supports); note that a user-generated interruption is signalled by raising the KeyboardInterrupt exception. ::\n\n>>> while True: ... try: ... x = int(input(\"Please enter a number: \")) ... break ... except ValueError: ... print(\"Oops! That was no valid number. Try again...\") ...\n\nThe try statement works as follows.\n\n* First, the *try clause* (the statement(s) between the try and except keywords) is executed.\n\n* If no exception occurs, the *except clause* is skipped and execution of the try statement is finished.",
+            "metadata": {
+              "section": "Errors and Exceptions",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 866
+            },
+            "score": 0.031009615384615385,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[cbd62b0b-f04e-52a5-af10-1ec884ba2f5d | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst | page 2]\n* If an exception occurs during execution of the try clause, the rest of the clause is skipped. Then, if its type matches the exception named after the except keyword, the *except clause* is executed, and then execution continues after the try/except block.\n\n* If an exception occurs which does not match the exception named in the *except clause*, it is passed on to outer try statements; if no handler is found, it is an *unhandled exception* and execution stops with an error message.\n\nA try statement may have more than one *except clause*, to specify handlers for different exceptions. At most one handler will be executed. Handlers only handle exceptions that occur in the corresponding *try clause*, not in other handlers of the same !try statement. An *except clause* may name multiple exceptions as a parenthesized tuple, for example::",
+        "context_ids": [
+          "cbd62b0b-f04e-52a5-af10-1ec884ba2f5d"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "python try except else clause execution",
+        "filter": {
+          "section": "Errors and Exceptions"
+        },
+        "results": [
+          {
+            "id": "d3017c95-6278-512c-a91e-5b2c6017afab",
+            "source_id": "errors",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst",
+            "page": 3,
+            "text": "try: f = open('myfile.txt') s = f.readline() i = int(s.strip()) except OSError as err: print(\"OS error:\", err) except ValueError: print(\"Could not convert data to an integer.\") except Exception as err: print(f\"Unexpected {err=}, {type(err)=}\") raise\n\nThe try ... except statement has an optional *else clause*, which, when present, must follow all *except clauses*. It is useful for code that must be executed if the *try clause* does not raise an exception. For example::\n\nfor arg in sys.argv[1:]: try: f = open(arg, 'r') except OSError: print('cannot open', arg) else: print(arg, 'has', len(f.readlines()), 'lines') f.close()\n\nThe use of the !else clause is better than adding additional code to the try clause because it avoids accidentally catching an exception that wasn't raised by the code being protected by the !try ... !except statement.",
+            "metadata": {
+              "section": "Errors and Exceptions",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1699,
+              "end": 2546
+            },
+            "score": 0.032266458495966696,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "cbd62b0b-f04e-52a5-af10-1ec884ba2f5d",
+            "source_id": "errors",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst",
+            "page": 2,
+            "text": "* If an exception occurs during execution of the try clause, the rest of the clause is skipped. Then, if its type matches the exception named after the except keyword, the *except clause* is executed, and then execution continues after the try/except block.\n\n* If an exception occurs which does not match the exception named in the *except clause*, it is passed on to outer try statements; if no handler is found, it is an *unhandled exception* and execution stops with an error message.\n\nA try statement may have more than one *except clause*, to specify handlers for different exceptions. At most one handler will be executed. Handlers only handle exceptions that occur in the corresponding *try clause*, not in other handlers of the same !try statement. An *except clause* may name multiple exceptions as a parenthesized tuple, for example::",
+            "metadata": {
+              "section": "Errors and Exceptions",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 868,
+              "end": 1712
+            },
+            "score": 0.03200204813108039,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "ebae0865-a2da-5af9-a247-0a0713bb6651",
+            "source_id": "errors",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst",
+            "page": 5,
+            "text": ">>> try: ... raise KeyboardInterrupt ... finally: ... print('Goodbye, world!') ... Goodbye, world! Traceback (most recent call last): File \"<stdin>\", line 2, in <module> raise KeyboardInterrupt KeyboardInterrupt\n\nIf a finally clause is present, the !finally clause will execute as the last task before the try statement completes. The !finally clause runs whether or not the !try statement produces an exception. The following points discuss more complex cases when an exception occurs:\n\n* If an exception occurs during execution of the !try clause, the exception may be handled by an except clause. If the exception is not handled by an !except clause, the exception is re-raised after the !finally clause has been executed.\n\n* An exception could occur during execution of an !except or !else clause. Again, the exception is re-raised after the !finally clause has been executed.",
+            "metadata": {
+              "section": "Errors and Exceptions",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1545,
+              "end": 2425
+            },
+            "score": 0.03177805800756621,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[cbd62b0b-f04e-52a5-af10-1ec884ba2f5d | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst | page 2]\n* If an exception occurs during execution of the try clause, the rest of the clause is skipped. Then, if its type matches the exception named after the except keyword, the *except clause* is executed, and then execution continues after the try/except block.\n\n* If an exception occurs which does not match the exception named in the *except clause*, it is passed on to outer try statements; if no handler is found, it is an *unhandled exception* and execution stops with an error message.\n\nA try statement may have more than one *except clause*, to specify handlers for different exceptions. At most one handler will be executed. Handlers only handle exceptions that occur in the corresponding *try clause*, not in other handlers of the same !try statement. An *except clause* may name multiple exceptions as a parenthesized tuple, for example::",
+        "context_ids": [
+          "cbd62b0b-f04e-52a5-af10-1ec884ba2f5d"
+        ]
+      },
+      {
+        "event": "invalid_or_missing_citations"
+      }
+    ],
+    "elapsed_sec": 14.701
+  },
+  {
+    "query_id": "q17",
+    "status": "answered",
+    "answer": "Yes, if an exception is not handled by an except clause, it is re-raised after the finally clause has been executed [ebae0865-a2da-5af9-a247-0a0713bb6651].",
+    "citations": [
+      "ebae0865-a2da-5af9-a247-0a0713bb6651"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "try finally exception re-raised",
+        "filter": null,
+        "results": [
+          {
+            "id": "1340902f-e887-5ba3-ba38-0b52431398d6",
+            "source_id": "errors",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst",
+            "page": 5,
+            "text": "* If the !finally clause executes a break, continue or return statement, exceptions are not re-raised.",
+            "metadata": {
+              "section": "Errors and Exceptions",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2427,
+              "end": 2529
+            },
+            "score": 0.032266458495966696,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "ebae0865-a2da-5af9-a247-0a0713bb6651",
+            "source_id": "errors",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst",
+            "page": 5,
+            "text": ">>> try: ... raise KeyboardInterrupt ... finally: ... print('Goodbye, world!') ... Goodbye, world! Traceback (most recent call last): File \"<stdin>\", line 2, in <module> raise KeyboardInterrupt KeyboardInterrupt\n\nIf a finally clause is present, the !finally clause will execute as the last task before the try statement completes. The !finally clause runs whether or not the !try statement produces an exception. The following points discuss more complex cases when an exception occurs:\n\n* If an exception occurs during execution of the !try clause, the exception may be handled by an except clause. If the exception is not handled by an !except clause, the exception is re-raised after the !finally clause has been executed.\n\n* An exception could occur during execution of an !except or !else clause. Again, the exception is re-raised after the !finally clause has been executed.",
+            "metadata": {
+              "section": "Errors and Exceptions",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1545,
+              "end": 2425
+            },
+            "score": 0.032266458495966696,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "226250e9-3489-59ec-b98c-73bc463f5cd5",
+            "source_id": "errors",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst",
+            "page": 4,
+            "text": "The sole argument to raise indicates the exception to be raised. This must be either an exception instance or an exception class (a class that derives from BaseException, such as Exception or one of its subclasses). If an exception class is passed, it will be implicitly instantiated by calling its constructor with no arguments::\n\nraise ValueError # shorthand for 'raise ValueError()'\n\nIf you need to determine whether an exception was raised but don't intend to handle it, a simpler form of the raise statement allows you to re-raise the exception::\n\n>>> try: ... raise NameError('HiThere') ... except NameError: ... print('An exception flew by!') ... raise ... An exception flew by! Traceback (most recent call last): File \"<stdin>\", line 2, in <module> raise NameError('HiThere') NameError: HiThere\n\nException Chaining",
+            "metadata": {
+              "section": "Errors and Exceptions",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 664,
+              "end": 1486
+            },
+            "score": 0.030330882352941176,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[1340902f-e887-5ba3-ba38-0b52431398d6 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst | page 5]\n* If the !finally clause executes a break, continue or return statement, exceptions are not re-raised.\n\n[ebae0865-a2da-5af9-a247-0a0713bb6651 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst | page 5]\n>>> try: ... raise KeyboardInterrupt ... finally: ... print('Goodbye, world!') ... Goodbye, world! Traceback (most recent call last): File \"<stdin>\", line 2, in <module> raise KeyboardInterrupt KeyboardInterrupt\n\nIf a finally clause is present, the !finally clause will execute as the last task before the try statement completes. The !finally clause runs whether or not the !try statement produces an exception. The following points discuss more complex cases when an exception occurs:\n\n* If an exception occurs during execution of the !try clause, the exception may be handled by an except clause. If the exception is not handled by an !except clause, the exception is re-raised after the !finally clause has been executed.\n\n* An exception could occur during execution of an !except or !else clause. Again, the exception is re-raised after the !finally clause has been executed.",
+        "context_ids": [
+          "1340902f-e887-5ba3-ba38-0b52431398d6",
+          "ebae0865-a2da-5af9-a247-0a0713bb6651"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_sec": 2.741
+  },
+  {
+    "query_id": "q18",
+    "status": "answered",
+    "answer": "Instance variables are used for data that is unique to each individual instance, whereas class variables are used for attributes and methods that are shared by all instances of the class [3e7839a6-f2d3-591e-9457-f668bdcc89c5].",
+    "citations": [
+      "3e7839a6-f2d3-591e-9457-f668bdcc89c5"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "Classes chapter instance variables class variables share",
+        "filter": {
+          "section": "Classes"
+        },
+        "results": [
+          {
+            "id": "3e7839a6-f2d3-591e-9457-f668bdcc89c5",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 6,
+            "text": "In general, methods work as follows. When a non-data attribute of an instance is referenced, the instance's class is searched. If the name denotes a valid class attribute that is a function object, references to both the instance object and the function object are packed into a method object. When the method object is called with an argument list, a new argument list is constructed from the instance object and the argument list, and the function object is called with this new argument list.\n\nClass and Instance Variables\n\nGenerally speaking, instance variables are for data unique to each instance and class variables are for attributes and methods shared by all instances of the class::",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1824,
+              "end": 2516
+            },
+            "score": 0.032266458495966696,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "5daf63fe-4be8-5c25-b40d-883c4d9966c7",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 1,
+            "text": "Classes\n\nClasses provide a means of bundling data and functionality together. Creating a new class creates a new *type* of object, allowing new *instances* of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by its class) for modifying its state.",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 348
+            },
+            "score": 0.03177805800756621,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "e5cc7fd6-74b9-50c4-a7b0-ea45cf6a99f6",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 5,
+            "text": "*data attributes* correspond to \"instance variables\" in Smalltalk, and to \"data members\" in C++. Data attributes need not be declared; like local variables, they spring into existence when they are first assigned to. For example, if x is the instance of !MyClass created above, the following piece of code will print the value 16, without leaving a trace::",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2167,
+              "end": 2523
+            },
+            "score": 0.0304147465437788,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[3e7839a6-f2d3-591e-9457-f668bdcc89c5 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 6]\nIn general, methods work as follows. When a non-data attribute of an instance is referenced, the instance's class is searched. If the name denotes a valid class attribute that is a function object, references to both the instance object and the function object are packed into a method object. When the method object is called with an argument list, a new argument list is constructed from the instance object and the argument list, and the function object is called with this new argument list.\n\nClass and Instance Variables\n\nGenerally speaking, instance variables are for data unique to each instance and class variables are for attributes and methods shared by all instances of the class::\n\n[5daf63fe-4be8-5c25-b40d-883c4d9966c7 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 1]\nClasses\n\nClasses provide a means of bundling data and functionality together. Creating a new class creates a new *type* of object, allowing new *instances* of that type to be made. Each class instance can have attributes attached to it for maintaining its state. Class instances can also have methods (defined by its class) for modifying its state.",
+        "context_ids": [
+          "3e7839a6-f2d3-591e-9457-f668bdcc89c5",
+          "5daf63fe-4be8-5c25-b40d-883c4d9966c7"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_sec": 9.276
+  },
+  {
+    "query_id": "q19",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "Python private instance variables single leading underscore",
+        "filter": null,
+        "results": [
+          {
+            "id": "29e5f93b-c9cf-5aba-817d-5f4481913854",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 10,
+            "text": "Since there is a valid use-case for class-private members (namely to avoid name clashes of names with names defined by subclasses), there is limited support for such a mechanism, called name mangling. Any identifier of the form __spam (at least two leading underscores, at most one trailing underscore) is textually replaced with _classname__spam, where classname is the current class name with leading underscore(s) stripped. This mangling is done without regard to the syntactic position of the identifier, as long as it occurs within the definition of a class.\n\n.. seealso::\n\nThe private name mangling specifications <private-name-mangling> for details and special cases.\n\nName mangling is helpful for letting subclasses override methods without breaking intraclass method calls. For example::\n\nclass Mapping: def __init__(self, iterable): self.items_list = [] self.__update(iterable)",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1617,
+              "end": 2504
+            },
+            "score": 0.03252247488101534,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "f79b8447-5984-5df4-b0f1-b5d48803d927",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 10,
+            "text": "\"Private\" instance variables that cannot be accessed except from inside an object don't exist in Python. However, there is a convention that is followed by most Python code: a name prefixed with an underscore (e.g. _spam) should be treated as a non-public part of the API (whether it is a function, a method or a data member). It should be considered an implementation detail and subject to change without notice.\n\n.. index:: pair: name; mangling",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1169,
+              "end": 1615
+            },
+            "score": 0.03252247488101534,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "92bff97f-9839-5eba-ba79-44cd3b922b7e",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 7,
+            "text": "class Dog:\n\nkind = 'canine' # class variable shared by all instances\n\ndef __init__(self, name): self.name = name # instance variable unique to each instance\n\n>>> d = Dog('Fido') >>> e = Dog('Buddy') >>> d.kind # shared by all dogs 'canine' >>> e.kind # shared by all dogs 'canine' >>> d.name # unique to d 'Fido' >>> e.name # unique to e 'Buddy'\n\nAs discussed in tut-object, shared data can have possibly surprising effects with involving mutable objects such as lists and dictionaries. For example, the *tricks* list in the following code should not be used as a class variable because just a single list would be shared by all *Dog* instances::\n\nclass Dog:\n\ntricks = [] # mistaken use of a class variable\n\ndef __init__(self, name): self.name = name\n\ndef add_trick(self, trick): self.tricks.append(trick)",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 805
+            },
+            "score": 0.029910714285714284,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[29e5f93b-c9cf-5aba-817d-5f4481913854 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 10]\nSince there is a valid use-case for class-private members (namely to avoid name clashes of names with names defined by subclasses), there is limited support for such a mechanism, called name mangling. Any identifier of the form __spam (at least two leading underscores, at most one trailing underscore) is textually replaced with _classname__spam, where classname is the current class name with leading underscore(s) stripped. This mangling is done without regard to the syntactic position of the identifier, as long as it occurs within the definition of a class.\n\n.. seealso::\n\nThe private name mangling specifications <private-name-mangling> for details and special cases.\n\nName mangling is helpful for letting subclasses override methods without breaking intraclass method calls. For example::\n\nclass Mapping: def __init__(self, iterable): self.items_list = [] self.__update(iterable)",
+        "context_ids": [
+          "29e5f93b-c9cf-5aba-817d-5f4481913854"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "Python single leading underscore instance variables",
+        "filter": null,
+        "results": [
+          {
+            "id": "f79b8447-5984-5df4-b0f1-b5d48803d927",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 10,
+            "text": "\"Private\" instance variables that cannot be accessed except from inside an object don't exist in Python. However, there is a convention that is followed by most Python code: a name prefixed with an underscore (e.g. _spam) should be treated as a non-public part of the API (whether it is a function, a method or a data member). It should be considered an implementation detail and subject to change without notice.\n\n.. index:: pair: name; mangling",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1169,
+              "end": 1615
+            },
+            "score": 0.03278688524590164,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "29e5f93b-c9cf-5aba-817d-5f4481913854",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 10,
+            "text": "Since there is a valid use-case for class-private members (namely to avoid name clashes of names with names defined by subclasses), there is limited support for such a mechanism, called name mangling. Any identifier of the form __spam (at least two leading underscores, at most one trailing underscore) is textually replaced with _classname__spam, where classname is the current class name with leading underscore(s) stripped. This mangling is done without regard to the syntactic position of the identifier, as long as it occurs within the definition of a class.\n\n.. seealso::\n\nThe private name mangling specifications <private-name-mangling> for details and special cases.\n\nName mangling is helpful for letting subclasses override methods without breaking intraclass method calls. For example::\n\nclass Mapping: def __init__(self, iterable): self.items_list = [] self.__update(iterable)",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1617,
+              "end": 2504
+            },
+            "score": 0.03225806451612903,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "d077784e-aaac-5930-bb4e-dae58d6c29db",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 8,
+            "text": "There is no shorthand for referencing data attributes (or other methods!) from within methods. I find that this actually increases the readability of methods: there is no chance of confusing local variables and instance variables when glancing through a method.\n\nOften, the first argument of a method is called self. This is nothing more than a convention: the name self has absolutely no special meaning to Python. Note, however, that by not following the convention your code may be less readable to other Python programmers, and it is also conceivable that a *class browser* program might be written that relies upon such a convention.",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 638
+            },
+            "score": 0.030117753623188408,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[29e5f93b-c9cf-5aba-817d-5f4481913854 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 10]\nSince there is a valid use-case for class-private members (namely to avoid name clashes of names with names defined by subclasses), there is limited support for such a mechanism, called name mangling. Any identifier of the form __spam (at least two leading underscores, at most one trailing underscore) is textually replaced with _classname__spam, where classname is the current class name with leading underscore(s) stripped. This mangling is done without regard to the syntactic position of the identifier, as long as it occurs within the definition of a class.\n\n.. seealso::\n\nThe private name mangling specifications <private-name-mangling> for details and special cases.\n\nName mangling is helpful for letting subclasses override methods without breaking intraclass method calls. For example::\n\nclass Mapping: def __init__(self, iterable): self.items_list = [] self.__update(iterable)",
+        "context_ids": [
+          "29e5f93b-c9cf-5aba-817d-5f4481913854"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "Python single leading underscore meaning",
+        "filter": null,
+        "results": [
+          {
+            "id": "29e5f93b-c9cf-5aba-817d-5f4481913854",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 10,
+            "text": "Since there is a valid use-case for class-private members (namely to avoid name clashes of names with names defined by subclasses), there is limited support for such a mechanism, called name mangling. Any identifier of the form __spam (at least two leading underscores, at most one trailing underscore) is textually replaced with _classname__spam, where classname is the current class name with leading underscore(s) stripped. This mangling is done without regard to the syntactic position of the identifier, as long as it occurs within the definition of a class.\n\n.. seealso::\n\nThe private name mangling specifications <private-name-mangling> for details and special cases.\n\nName mangling is helpful for letting subclasses override methods without breaking intraclass method calls. For example::\n\nclass Mapping: def __init__(self, iterable): self.items_list = [] self.__update(iterable)",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1617,
+              "end": 2504
+            },
+            "score": 0.03278688524590164,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "f79b8447-5984-5df4-b0f1-b5d48803d927",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 10,
+            "text": "\"Private\" instance variables that cannot be accessed except from inside an object don't exist in Python. However, there is a convention that is followed by most Python code: a name prefixed with an underscore (e.g. _spam) should be treated as a non-public part of the API (whether it is a function, a method or a data member). It should be considered an implementation detail and subject to change without notice.\n\n.. index:: pair: name; mangling",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1169,
+              "end": 1615
+            },
+            "score": 0.030834914611005692,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "c3c73750-4097-523d-863c-3b532fd3a1a5",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 12,
+            "text": "The Python parser does not strip indentation from multi-line string literals in Python, so tools that process documentation have to strip indentation if desired. This is done using the following convention. The first non-blank line *after* the first line of the string determines the amount of indentation for the entire documentation string. (We can't use the first line since it is generally adjacent to the string's opening quotes so its indentation is not apparent in the string literal.) Whitespace \"equivalent\" to this indentation is then stripped from the start of all lines of the string. Lines that are indented less should not occur, but if they occur all their leading whitespace should be stripped. Equivalence of whitespace should be tested after expansion of tabs (to 8 spaces, normally).",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2086,
+              "end": 2888
+            },
+            "score": 0.02946912242686891,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[29e5f93b-c9cf-5aba-817d-5f4481913854 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 10]\nSince there is a valid use-case for class-private members (namely to avoid name clashes of names with names defined by subclasses), there is limited support for such a mechanism, called name mangling. Any identifier of the form __spam (at least two leading underscores, at most one trailing underscore) is textually replaced with _classname__spam, where classname is the current class name with leading underscore(s) stripped. This mangling is done without regard to the syntactic position of the identifier, as long as it occurs within the definition of a class.\n\n.. seealso::\n\nThe private name mangling specifications <private-name-mangling> for details and special cases.\n\nName mangling is helpful for letting subclasses override methods without breaking intraclass method calls. For example::\n\nclass Mapping: def __init__(self, iterable): self.items_list = [] self.__update(iterable)",
+        "context_ids": [
+          "29e5f93b-c9cf-5aba-817d-5f4481913854"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 10.381
+  },
+  {
+    "query_id": "q20",
+    "status": "answered",
+    "answer": "When there are no more elements, ~iterator.__next__ raises a StopIteration exception which tells the for loop to terminate [37ebb14c-e66a-5843-8768-a58f526220d5].",
+    "citations": [
+      "37ebb14c-e66a-5843-8768-a58f526220d5"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "Python iterator exhausted exception for loop",
+        "filter": null,
+        "results": [
+          {
+            "id": "37ebb14c-e66a-5843-8768-a58f526220d5",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 12,
+            "text": "Iterators\n\nBy now you have probably noticed that most container objects can be looped over using a for statement::\n\nfor element in [1, 2, 3]: print(element) for element in (1, 2, 3): print(element) for key in {'one':1, 'two':2}: print(key) for char in \"123\": print(char) for line in open(\"myfile.txt\"): print(line, end='')\n\nThis style of access is clear, concise, and convenient. The use of iterators pervades and unifies Python. Behind the scenes, the for statement calls iter on the container object. The function returns an iterator object that defines the method ~iterator.__next__ which accesses elements in the container one at a time. When there are no more elements, ~iterator.__next__ raises a StopIteration exception which tells the !for loop to terminate. You can call the ~iterator.__next__ method using the next built-in function; this example shows how it all works::",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 881
+            },
+            "score": 0.03278688524590164,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "0a90649a-f606-564b-97e8-414261bd26eb",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 12,
+            "text": ">>> s = 'abc' >>> it = iter(s) >>> it <str_iterator object at 0x10c90e650> >>> next(it) 'a' >>> next(it) 'b' >>> next(it) 'c' >>> next(it) Traceback (most recent call last): File \"<stdin>\", line 1, in <module> next(it) StopIteration\n\nHaving seen the mechanics behind the iterator protocol, it is easy to add iterator behavior to your classes. Define an ~container.__iter__ method which returns an object with a ~iterator.__next__ method. If the class defines !__next__, then !__iter__ can just return self::\n\nclass Reverse: \"\"\"Iterator for looping over a sequence backwards.\"\"\" def __init__(self, data): self.data = data self.index = len(data)\n\ndef __iter__(self): return self\n\ndef __next__(self): if self.index == 0: raise StopIteration self.index = self.index - 1 return self.data[self.index]\n\n::",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 883,
+              "end": 1681
+            },
+            "score": 0.031754032258064516,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "1c4739cb-ace9-53e0-b1e0-103222d1f4a3",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 2,
+            "text": "In either kind of loop, the !else clause is **not** executed if the loop was terminated by a break. Of course, other ways of ending the loop early, such as a return or a raised exception, will also skip execution of the else clause.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2363,
+              "end": 2595
+            },
+            "score": 0.0315136476426799,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[37ebb14c-e66a-5843-8768-a58f526220d5 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 12]\nIterators\n\nBy now you have probably noticed that most container objects can be looped over using a for statement::\n\nfor element in [1, 2, 3]: print(element) for element in (1, 2, 3): print(element) for key in {'one':1, 'two':2}: print(key) for char in \"123\": print(char) for line in open(\"myfile.txt\"): print(line, end='')\n\nThis style of access is clear, concise, and convenient. The use of iterators pervades and unifies Python. Behind the scenes, the for statement calls iter on the container object. The function returns an iterator object that defines the method ~iterator.__next__ which accesses elements in the container one at a time. When there are no more elements, ~iterator.__next__ raises a StopIteration exception which tells the !for loop to terminate. You can call the ~iterator.__next__ method using the next built-in function; this example shows how it all works::\n\n[1c4739cb-ace9-53e0-b1e0-103222d1f4a3 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst | page 2]\nIn either kind of loop, the !else clause is **not** executed if the loop was terminated by a break. Of course, other ways of ending the loop early, such as a return or a raised exception, will also skip execution of the else clause.",
+        "context_ids": [
+          "37ebb14c-e66a-5843-8768-a58f526220d5",
+          "1c4739cb-ace9-53e0-b1e0-103222d1f4a3"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_sec": 3.281
+  },
+  {
+    "query_id": "q_unans_test1",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "define class with slots prevent dynamic creation instance dict",
+        "filter": null,
+        "results": [
+          {
+            "id": "39034d94-a5b4-5d4c-baa2-74bbed789c1f",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 5,
+            "text": "Class *instantiation* uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. For example (assuming the above class)::\n\nx = MyClass()\n\ncreates a new *instance* of the class and assigns this object to the local variable x.\n\nThe instantiation operation (\"calling\" a class object) creates an empty object. Many classes like to create objects with instances customized to a specific initial state. Therefore a class may define a special method named ~object.__init__, like this::\n\ndef __init__(self): self.data = []\n\nWhen a class defines an ~object.__init__ method, class instantiation automatically invokes !__init__ for the newly created class instance. So in this example, a new, initialized instance can be obtained by::\n\nx = MyClass()",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 786,
+              "end": 1594
+            },
+            "score": 0.03252247488101534,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "92bff97f-9839-5eba-ba79-44cd3b922b7e",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 7,
+            "text": "class Dog:\n\nkind = 'canine' # class variable shared by all instances\n\ndef __init__(self, name): self.name = name # instance variable unique to each instance\n\n>>> d = Dog('Fido') >>> e = Dog('Buddy') >>> d.kind # shared by all dogs 'canine' >>> e.kind # shared by all dogs 'canine' >>> d.name # unique to d 'Fido' >>> e.name # unique to e 'Buddy'\n\nAs discussed in tut-object, shared data can have possibly surprising effects with involving mutable objects such as lists and dictionaries. For example, the *tricks* list in the following code should not be used as a class variable because just a single list would be shared by all *Dog* instances::\n\nclass Dog:\n\ntricks = [] # mistaken use of a class variable\n\ndef __init__(self, name): self.name = name\n\ndef add_trick(self, trick): self.tricks.append(trick)",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 805
+            },
+            "score": 0.03021353930031804,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "4e1a63fd-b5f9-5b39-809e-746c534eef01",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 1,
+            "text": "Compared with other programming languages, Python's class mechanism adds classes with a minimum of new syntax and semantics. It is a mixture of the class mechanisms found in C++ and Modula-3. Python classes provide all the standard features of Object Oriented Programming: the class inheritance mechanism allows multiple base classes, a derived class can override any methods of its base class or classes, and a method can call the method of a base class with the same name. Objects can contain arbitrary amounts and kinds of data. As is true for modules, classes partake of the dynamic nature of Python: they are created at runtime, and can be modified further after creation.",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 350,
+              "end": 1027
+            },
+            "score": 0.029906956136464335,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[39034d94-a5b4-5d4c-baa2-74bbed789c1f | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 5]\nClass *instantiation* uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. For example (assuming the above class)::\n\nx = MyClass()\n\ncreates a new *instance* of the class and assigns this object to the local variable x.\n\nThe instantiation operation (\"calling\" a class object) creates an empty object. Many classes like to create objects with instances customized to a specific initial state. Therefore a class may define a special method named ~object.__init__, like this::\n\ndef __init__(self): self.data = []\n\nWhen a class defines an ~object.__init__ method, class instantiation automatically invokes !__init__ for the newly created class instance. So in this example, a new, initialized instance can be obtained by::\n\nx = MyClass()",
+        "context_ids": [
+          "39034d94-a5b4-5d4c-baa2-74bbed789c1f"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "slots dict python class",
+        "filter": null,
+        "results": [
+          {
+            "id": "55f27f21-2ab1-5fef-912a-d393b675c150",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 7,
+            "text": "The dict constructor builds dictionaries directly from sequences of key-value pairs::\n\n>>> dict([('sape', 4139), ('guido', 4127), ('jack', 4098)]) {'sape': 4139, 'guido': 4127, 'jack': 4098}\n\nIn addition, dict comprehensions can be used to create dictionaries from arbitrary key and value expressions::\n\n>>> {x: x**2 for x in (2, 4, 6)} {2: 4, 4: 16, 6: 36}\n\nWhen the keys are simple strings, it is sometimes easier to specify pairs using keyword arguments::\n\n>>> dict(sape=4139, guido=4127, jack=4098) {'sape': 4139, 'guido': 4127, 'jack': 4098}\n\nLooping Techniques\n\nWhen looping through dictionaries, the key and corresponding value can be retrieved at the same time using the ~dict.items method. ::\n\n>>> knights = {'gallahad': 'the pure', 'robin': 'the brave'} >>> for k, v in knights.items(): ... print(k, v) ... gallahad the pure robin the brave",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 850
+            },
+            "score": 0.03252247488101534,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "8a6e3b08-45fd-5c96-9c67-db40d9bc6fb7",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 2,
+            "text": "Python Scopes and Namespaces\n\nBefore introducing classes, I first have to tell you something about Python's scope rules. Class definitions play some neat tricks with namespaces, and you need to know how scopes and namespaces work to fully understand what's going on. Incidentally, knowledge about this subject is useful for any advanced Python programmer.\n\nLet's begin with some definitions.",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 391
+            },
+            "score": 0.03177805800756621,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "32c646c0-b821-5ff1-9f42-bde15788efb7",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 5,
+            "text": "Class Objects\n\nClass objects support two kinds of operations: attribute references and instantiation.\n\n*Attribute references* use the standard syntax used for all attribute references in Python: obj.name. Valid attribute names are all the names that were in the class's namespace when the class object was created. So, if the class definition looked like this::\n\nclass MyClass: \"\"\"A simple example class\"\"\" i = 12345\n\ndef f(self): return 'hello world'\n\nthen MyClass.i and MyClass.f are valid attribute references, returning an integer and a function object, respectively. Class attributes can also be assigned to, so you can change the value of MyClass.i by assignment. ~type.__doc__ is also a valid attribute, returning the docstring belonging to the class: \"A simple example class\".",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 784
+            },
+            "score": 0.03149801587301587,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[39034d94-a5b4-5d4c-baa2-74bbed789c1f | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 5]\nClass *instantiation* uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. For example (assuming the above class)::\n\nx = MyClass()\n\ncreates a new *instance* of the class and assigns this object to the local variable x.\n\nThe instantiation operation (\"calling\" a class object) creates an empty object. Many classes like to create objects with instances customized to a specific initial state. Therefore a class may define a special method named ~object.__init__, like this::\n\ndef __init__(self): self.data = []\n\nWhen a class defines an ~object.__init__ method, class instantiation automatically invokes !__init__ for the newly created class instance. So in this example, a new, initialized instance can be obtained by::\n\nx = MyClass()\n\n[8a6e3b08-45fd-5c96-9c67-db40d9bc6fb7 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 2]\nPython Scopes and Namespaces\n\nBefore introducing classes, I first have to tell you something about Python's scope rules. Class definitions play some neat tricks with namespaces, and you need to know how scopes and namespaces work to fully understand what's going on. Incidentally, knowledge about this subject is useful for any advanced Python programmer.\n\nLet's begin with some definitions.",
+        "context_ids": [
+          "39034d94-a5b4-5d4c-baa2-74bbed789c1f",
+          "8a6e3b08-45fd-5c96-9c67-db40d9bc6fb7"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "python class __slots__ prevent __dict__",
+        "filter": null,
+        "results": [
+          {
+            "id": "29e70de5-788b-598c-8004-1320bdae4729",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 13,
+            "text": ".. [#] Except for one thing. Module objects have a secret read-only attribute called ~object.__dict__ which returns the dictionary used to implement the module's namespace; the name __dict__ is an attribute but not a global name. Obviously, using this violates the abstraction of namespace implementation, and should be restricted to things like post-mortem debuggers.",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1385,
+              "end": 1753
+            },
+            "score": 0.032018442622950824,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "8a6e3b08-45fd-5c96-9c67-db40d9bc6fb7",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 2,
+            "text": "Python Scopes and Namespaces\n\nBefore introducing classes, I first have to tell you something about Python's scope rules. Class definitions play some neat tricks with namespaces, and you need to know how scopes and namespaces work to fully understand what's going on. Incidentally, knowledge about this subject is useful for any advanced Python programmer.\n\nLet's begin with some definitions.",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 391
+            },
+            "score": 0.03131881575727918,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "32c646c0-b821-5ff1-9f42-bde15788efb7",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 5,
+            "text": "Class Objects\n\nClass objects support two kinds of operations: attribute references and instantiation.\n\n*Attribute references* use the standard syntax used for all attribute references in Python: obj.name. Valid attribute names are all the names that were in the class's namespace when the class object was created. So, if the class definition looked like this::\n\nclass MyClass: \"\"\"A simple example class\"\"\" i = 12345\n\ndef f(self): return 'hello world'\n\nthen MyClass.i and MyClass.f are valid attribute references, returning an integer and a function object, respectively. Class attributes can also be assigned to, so you can change the value of MyClass.i by assignment. ~type.__doc__ is also a valid attribute, returning the docstring belonging to the class: \"A simple example class\".",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 784
+            },
+            "score": 0.030536130536130537,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[39034d94-a5b4-5d4c-baa2-74bbed789c1f | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 5]\nClass *instantiation* uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. For example (assuming the above class)::\n\nx = MyClass()\n\ncreates a new *instance* of the class and assigns this object to the local variable x.\n\nThe instantiation operation (\"calling\" a class object) creates an empty object. Many classes like to create objects with instances customized to a specific initial state. Therefore a class may define a special method named ~object.__init__, like this::\n\ndef __init__(self): self.data = []\n\nWhen a class defines an ~object.__init__ method, class instantiation automatically invokes !__init__ for the newly created class instance. So in this example, a new, initialized instance can be obtained by::\n\nx = MyClass()\n\n[8a6e3b08-45fd-5c96-9c67-db40d9bc6fb7 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 2]\nPython Scopes and Namespaces\n\nBefore introducing classes, I first have to tell you something about Python's scope rules. Class definitions play some neat tricks with namespaces, and you need to know how scopes and namespaces work to fully understand what's going on. Incidentally, knowledge about this subject is useful for any advanced Python programmer.\n\nLet's begin with some definitions.",
+        "context_ids": [
+          "39034d94-a5b4-5d4c-baa2-74bbed789c1f",
+          "8a6e3b08-45fd-5c96-9c67-db40d9bc6fb7"
+        ]
+      },
+      {
+        "event": "invalid_or_missing_citations"
+      }
+    ],
+    "elapsed_sec": 16.287
+  },
+  {
+    "query_id": "q_unans_test2",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "how to create abstract base class using abc.ABCMeta and @abstractmethod",
+        "filter": null,
+        "results": [
+          {
+            "id": "aa6f2b8e-2c22-5b88-a460-38f7606ca662",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 9,
+            "text": "The name !BaseClassName must be defined in a namespace accessible from the scope containing the derived class definition. In place of a base class name, other arbitrary expressions are also allowed. This can be useful, for example, when the base class is defined in another module::\n\nclass DerivedClassName(modname.BaseClassName):\n\nExecution of a derived class definition proceeds the same as for a base class. When the class object is constructed, the base class is remembered. This is used for resolving attribute references: if a requested attribute is not found in the class, the search proceeds to look in the base class. This rule is applied recursively if the base class itself is derived from some other class.",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 718
+            },
+            "score": 0.03278688524590164,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "1d1a2f9e-1578-5933-8c9e-f1d86263063c",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 9,
+            "text": "There's nothing special about instantiation of derived classes: DerivedClassName() creates a new instance of the class. Method references are resolved as follows: the corresponding class attribute is searched, descending down the chain of base classes if necessary, and the method reference is valid if this yields a function object.\n\nDerived classes may override methods of their base classes. Because methods have no special privileges when calling other methods of the same object, a method of a base class that calls another method defined in the same base class may end up calling a method of a derived class that overrides it. (For C++ programmers: all methods in Python are effectively virtual.)",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 720,
+              "end": 1422
+            },
+            "score": 0.0315136476426799,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "7ed27c1f-237b-510a-b8fe-564add92b944",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 9,
+            "text": "An overriding method in a derived class may in fact want to extend rather than simply replace the base class method of the same name. There is a simple way to call the base class method directly: just call BaseClassName.methodname(self, arguments). This is occasionally useful to clients as well. (Note that this only works if the base class is accessible as BaseClassName in the global scope.)\n\nPython has two built-in functions that work with inheritance:\n\n* Use isinstance to check an instance's type: isinstance(obj, int) will be True only if obj.__class__ is int or some class derived from int.\n\n* Use issubclass to check class inheritance: issubclass(bool, int) is True since bool is a subclass of int. However, issubclass(float, int) is False since float is not a subclass of int.\n\nMultiple Inheritance",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1424,
+              "end": 2233
+            },
+            "score": 0.030776515151515152,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[aa6f2b8e-2c22-5b88-a460-38f7606ca662 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 9]\nThe name !BaseClassName must be defined in a namespace accessible from the scope containing the derived class definition. In place of a base class name, other arbitrary expressions are also allowed. This can be useful, for example, when the base class is defined in another module::\n\nclass DerivedClassName(modname.BaseClassName):\n\nExecution of a derived class definition proceeds the same as for a base class. When the class object is constructed, the base class is remembered. This is used for resolving attribute references: if a requested attribute is not found in the class, the search proceeds to look in the base class. This rule is applied recursively if the base class itself is derived from some other class.",
+        "context_ids": [
+          "aa6f2b8e-2c22-5b88-a460-38f7606ca662"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "abc.ABCMeta abstractmethod",
+        "filter": null,
+        "results": [
+          {
+            "id": "c8d6feb2-2d28-5bbc-8e2e-1ba771b6dc84",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 8,
+            "text": "(1, 2, 3) < (1, 2, 4) [1, 2, 3] < [1, 2, 4] 'ABC' < 'C' < 'Pascal' < 'Python' (1, 2, 3, 4) < (1, 2, 4) (1, 2) < (1, 2, -1) (1, 2, 3) == (1.0, 2.0, 3.0) (1, 2, ('aa', 'ab')) < (1, 2, ('abc', 'a'), 4)\n\nNote that comparing objects of different types with < or > is legal provided that the objects have appropriate comparison methods. For example, mixed numeric types are compared according to their numeric value, so 0 equals 0.0, etc. Otherwise, rather than providing an arbitrary ordering, the interpreter will raise a TypeError exception.\n\n.. rubric:: Footnotes\n\n.. [#] Other languages may return the mutated object, which allows method chaining, such as d->insert(\"a\")->remove(\"b\")->sort();.",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2754,
+              "end": 3446
+            },
+            "score": 0.03009207275993712,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "b3986ee0-155b-5154-9820-e53b0015451c",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 12,
+            "text": "The first line should always be a short, concise summary of the object's purpose. For brevity, it should not explicitly state the object's name or type, since these are available by other means (except if the name happens to be a verb describing a function's operation). This line should begin with a capital letter and end with a period.\n\nIf there are more lines in the documentation string, the second line should be blank, visually separating the summary from the rest of the description. The following lines should be one or more paragraphs describing the object's calling conventions, its side effects, etc.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1472,
+              "end": 2084
+            },
+            "score": 0.01639344262295082,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "41bcad50-a285-5508-9ba5-8fbd8426d37d",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 6,
+            "text": ">>> # Demonstrate set operations on unique letters from two words >>> >>> a = set('abracadabra') >>> b = set('alacazam') >>> a # unique letters in a {'a', 'r', 'b', 'c', 'd'} >>> a - b # letters in a but not in b {'r', 'd', 'b'} >>> a | b # letters in a or b or both {'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'} >>> a & b # letters in both a and b {'a', 'c'} >>> a ^ b # letters in a or b but not both {'r', 'd', 'b', 'm', 'z', 'l'}\n\nSimilarly to list comprehensions <tut-listcomps>, set comprehensions are also supported::\n\n>>> a = {x for x in 'abracadabra' if x not in 'abc'} >>> a {'r', 'd'}\n\nDictionaries",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 604
+            },
+            "score": 0.016129032258064516,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[aa6f2b8e-2c22-5b88-a460-38f7606ca662 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 9]\nThe name !BaseClassName must be defined in a namespace accessible from the scope containing the derived class definition. In place of a base class name, other arbitrary expressions are also allowed. This can be useful, for example, when the base class is defined in another module::\n\nclass DerivedClassName(modname.BaseClassName):\n\nExecution of a derived class definition proceeds the same as for a base class. When the class object is constructed, the base class is remembered. This is used for resolving attribute references: if a requested attribute is not found in the class, the search proceeds to look in the base class. This rule is applied recursively if the base class itself is derived from some other class.\n\n[41bcad50-a285-5508-9ba5-8fbd8426d37d | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst | page 6]\n>>> # Demonstrate set operations on unique letters from two words >>> >>> a = set('abracadabra') >>> b = set('alacazam') >>> a # unique letters in a {'a', 'r', 'b', 'c', 'd'} >>> a - b # letters in a but not in b {'r', 'd', 'b'} >>> a | b # letters in a or b or both {'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'} >>> a & b # letters in both a and b {'a', 'c'} >>> a ^ b # letters in a or b but not both {'r', 'd', 'b', 'm', 'z', 'l'}\n\nSimilarly to list comprehensions <tut-listcomps>, set comprehensions are also supported::\n\n>>> a = {x for x in 'abracadabra' if x not in 'abc'} >>> a {'r', 'd'}\n\nDictionaries",
+        "context_ids": [
+          "aa6f2b8e-2c22-5b88-a460-38f7606ca662",
+          "41bcad50-a285-5508-9ba5-8fbd8426d37d"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "ABCMeta abstractmethod python",
+        "filter": null,
+        "results": [
+          {
+            "id": "4e1a63fd-b5f9-5b39-809e-746c534eef01",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 1,
+            "text": "Compared with other programming languages, Python's class mechanism adds classes with a minimum of new syntax and semantics. It is a mixture of the class mechanisms found in C++ and Modula-3. Python classes provide all the standard features of Object Oriented Programming: the class inheritance mechanism allows multiple base classes, a derived class can override any methods of its base class or classes, and a method can call the method of a base class with the same name. Objects can contain arbitrary amounts and kinds of data. As is true for modules, classes partake of the dynamic nature of Python: they are created at runtime, and can be modified further after creation.",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 350,
+              "end": 1027
+            },
+            "score": 0.03076923076923077,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "8a6e3b08-45fd-5c96-9c67-db40d9bc6fb7",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 2,
+            "text": "Python Scopes and Namespaces\n\nBefore introducing classes, I first have to tell you something about Python's scope rules. Class definitions play some neat tricks with namespaces, and you need to know how scopes and namespaces work to fully understand what's going on. Incidentally, knowledge about this subject is useful for any advanced Python programmer.\n\nLet's begin with some definitions.",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 391
+            },
+            "score": 0.029726775956284153,
+            "strategy": "hybrid_rrf"
+          },
+          {
+            "id": "bd9129a3-4b04-5d5d-b8d5-c3fd8a36aeec",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 13,
+            "text": "* Name your classes and functions consistently; the convention is to use UpperCamelCase for classes and lowercase_with_underscores for functions and methods. Always use self as the name for the first method argument (see tut-firstclasses for more on classes and methods).\n\n* Don't use fancy encodings if your code is meant to be used in international environments. Python's default, UTF-8, or even plain ASCII work best in any case.\n\n* Likewise, don't use non-ASCII characters in identifiers if there is only the slightest chance people speaking a different language will read or maintain the code.\n\n.. rubric:: Footnotes\n\n.. [#] Actually, *call by object reference* would be a better description, since if a mutable object is passed, the caller will see any changes the callee makes to it (items inserted into a list).",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2894,
+              "end": 3713
+            },
+            "score": 0.01639344262295082,
+            "strategy": "hybrid_rrf"
+          }
+        ],
+        "context": "[aa6f2b8e-2c22-5b88-a460-38f7606ca662 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 9]\nThe name !BaseClassName must be defined in a namespace accessible from the scope containing the derived class definition. In place of a base class name, other arbitrary expressions are also allowed. This can be useful, for example, when the base class is defined in another module::\n\nclass DerivedClassName(modname.BaseClassName):\n\nExecution of a derived class definition proceeds the same as for a base class. When the class object is constructed, the base class is remembered. This is used for resolving attribute references: if a requested attribute is not found in the class, the search proceeds to look in the base class. This rule is applied recursively if the base class itself is derived from some other class.\n\n[41bcad50-a285-5508-9ba5-8fbd8426d37d | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst | page 6]\n>>> # Demonstrate set operations on unique letters from two words >>> >>> a = set('abracadabra') >>> b = set('alacazam') >>> a # unique letters in a {'a', 'r', 'b', 'c', 'd'} >>> a - b # letters in a but not in b {'r', 'd', 'b'} >>> a | b # letters in a or b or both {'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'} >>> a & b # letters in both a and b {'a', 'c'} >>> a ^ b # letters in a or b but not both {'r', 'd', 'b', 'm', 'z', 'l'}\n\nSimilarly to list comprehensions <tut-listcomps>, set comprehensions are also supported::\n\n>>> a = {x for x in 'abracadabra' if x not in 'abc'} >>> a {'r', 'd'}\n\nDictionaries",
+        "context_ids": [
+          "aa6f2b8e-2c22-5b88-a460-38f7606ca662",
+          "41bcad50-a285-5508-9ba5-8fbd8426d37d"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 19.694
+  }
+]

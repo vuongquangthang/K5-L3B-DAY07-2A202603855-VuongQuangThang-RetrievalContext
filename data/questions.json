@@ -1,0 +1,282 @@
+[
+  {
+    "id": "q01",
+    "split": "dev",
+    "question": "Does Python range include its stop value?",
+    "expected_answer": "No. The given end point is excluded.",
+    "gold": [
+      {
+        "source_id": "controlflow",
+        "page": 1,
+        "evidence": "The given end point is never part of the generated sequence; range(10) generates 10 values, the legal indices for items of a sequence of length 10."
+      }
+    ]
+  },
+  {
+    "id": "q02",
+    "split": "dev",
+    "question": "In nested Python loops, which loop does break leave?",
+    "expected_answer": "The innermost enclosing for or while loop.",
+    "gold": [
+      {
+        "source_id": "controlflow",
+        "page": 2,
+        "evidence": "The break statement breaks out of the innermost enclosing for or while loop::"
+      }
+    ]
+  },
+  {
+    "id": "q03",
+    "split": "dev",
+    "question": "In the More Control Flow Tools chapter, why can a mutable default argument retain data across calls?",
+    "expected_answer": "A default value is evaluated only once, so a mutable default can be reused across calls.",
+    "gold": [
+      {
+        "source_id": "controlflow",
+        "page": 7,
+        "evidence": "**Important warning:** The default value is evaluated only once. This makes a difference when the default is a mutable object such as a list, dictionary, or instances of most classes."
+      }
+    ],
+    "filter": {
+      "section": "More Control Flow Tools"
+    }
+  },
+  {
+    "id": "q04",
+    "split": "dev",
+    "question": "How do I mark Python function parameters as keyword-only?",
+    "expected_answer": "Put an asterisk in the argument list just before the first keyword-only parameter.",
+    "gold": [
+      {
+        "source_id": "controlflow",
+        "page": 9,
+        "evidence": "To mark parameters as *keyword-only*, indicating the parameters must be passed by keyword argument, place an * in the arguments list just before the first *keyword-only* parameter."
+      }
+    ]
+  },
+  {
+    "id": "q05",
+    "split": "dev",
+    "question": "What happens if list.remove cannot find the requested value, and which occurrence is removed otherwise?",
+    "expected_answer": "It removes the first equal item; if none exists it raises ValueError.",
+    "gold": [
+      {
+        "source_id": "datastructures",
+        "page": 1,
+        "evidence": "Remove the first item from the list whose value is equal to *x*. It raises a ValueError if there is no such item."
+      }
+    ]
+  },
+  {
+    "id": "q06",
+    "split": "dev",
+    "question": "What does a.pop() return without an index, and what if the list is empty?",
+    "expected_answer": "It removes and returns the last item; an empty list raises IndexError.",
+    "gold": [
+      {
+        "source_id": "datastructures",
+        "page": 1,
+        "evidence": "If no index is specified, a.pop() removes and returns the last item in the list. It raises an IndexError if the list is empty or the index is outside the list range."
+      }
+    ]
+  },
+  {
+    "id": "q07",
+    "split": "dev",
+    "question": "Can a tuple containing a mutable object be a dictionary key?",
+    "expected_answer": "No, even indirect containment of a mutable object prevents using the tuple as a key.",
+    "gold": [
+      {
+        "source_id": "datastructures",
+        "page": 6,
+        "evidence": "Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key."
+      }
+    ]
+  },
+  {
+    "id": "q08",
+    "split": "dev",
+    "question": "In the Data Structures chapter, in what order does list(d) return dictionary keys?",
+    "expected_answer": "Insertion order. Use sorted(d) for sorted order.",
+    "gold": [
+      {
+        "source_id": "datastructures",
+        "page": 6,
+        "evidence": "Performing list(d) on a dictionary returns a list of all the keys used in the dictionary, in insertion order (if you want it sorted, just use sorted(d) instead)."
+      }
+    ],
+    "filter": {
+      "section": "Data Structures"
+    }
+  },
+  {
+    "id": "q09",
+    "split": "dev",
+    "question": "Which list operations implement pushing and popping a last-in first-out stack?",
+    "expected_answer": "append adds to the top; pop without an explicit index retrieves from the top.",
+    "gold": [
+      {
+        "source_id": "datastructures",
+        "page": 2,
+        "evidence": "To add an item to the top of the stack, use ~list.append. To retrieve an item from the top of the stack, use ~list.pop without an explicit index."
+      }
+    ]
+  },
+  {
+    "id": "q10",
+    "split": "dev",
+    "question": "What is the value of __name__ when a Python module is executed as a script?",
+    "expected_answer": "__main__.",
+    "gold": [
+      {
+        "source_id": "modules",
+        "page": 3,
+        "evidence": "the code in the module will be executed, just as if you imported it, but with the __name__ set to \"__main__\"."
+      }
+    ]
+  },
+  {
+    "id": "q11",
+    "split": "dev",
+    "question": "After checking built-in modules, where does Python search for spam.py?",
+    "expected_answer": "In the directories listed in sys.path.",
+    "gold": [
+      {
+        "source_id": "modules",
+        "page": 3,
+        "evidence": "If not found, it then searches for a file named spam.py in a list of directories given by the variable sys.path."
+      }
+    ]
+  },
+  {
+    "id": "q12",
+    "split": "dev",
+    "question": "Does using a .pyc file make the program execute faster than a .py file?",
+    "expected_answer": "No. Only loading is faster.",
+    "gold": [
+      {
+        "source_id": "modules",
+        "page": 4,
+        "evidence": "A program doesn't run any faster when it is read from a .pyc file than when it is read from a .py file; the only thing that's faster about .pyc files is the speed with which they are loaded."
+      }
+    ]
+  },
+  {
+    "id": "q13",
+    "split": "dev",
+    "question": "Which text-file encoding is recommended unless a different encoding is needed?",
+    "expected_answer": "UTF-8, using encoding=\"utf-8\".",
+    "gold": [
+      {
+        "source_id": "inputoutput",
+        "page": 5,
+        "evidence": "Because UTF-8 is the modern de-facto standard, encoding=\"utf-8\" is recommended unless you know that you need to use a different encoding."
+      }
+    ]
+  },
+  {
+    "id": "q14",
+    "split": "dev",
+    "question": "In the Input and Output chapter, why use with for a file if an exception might occur?",
+    "expected_answer": "The file is properly closed after the suite, even if an exception is raised.",
+    "gold": [
+      {
+        "source_id": "inputoutput",
+        "page": 5,
+        "evidence": "The advantage is that the file is properly closed after its suite finishes, even if an exception is raised at some point."
+      }
+    ],
+    "filter": {
+      "section": "Input and Output"
+    }
+  },
+  {
+    "id": "q15",
+    "split": "dev",
+    "question": "What encoding must JSON text files use when opening them for reading and writing?",
+    "expected_answer": "UTF-8 for both reading and writing.",
+    "gold": [
+      {
+        "source_id": "inputoutput",
+        "page": 7,
+        "evidence": "JSON files must be encoded in UTF-8. Use encoding=\"utf-8\" when opening JSON file as a text file for both of reading and writing."
+      }
+    ]
+  },
+  {
+    "id": "q16",
+    "split": "test",
+    "question": "In the Errors and Exceptions chapter, when does the optional else clause of try-except execute?",
+    "expected_answer": "When the try clause does not raise an exception.",
+    "gold": [
+      {
+        "source_id": "errors",
+        "page": 3,
+        "evidence": "The try ... except statement has an optional *else clause*, which, when present, must follow all *except clauses*. It is useful for code that must be executed if the *try clause* does not raise an exception."
+      },
+      {
+        "source_id": "controlflow",
+        "page": 3,
+        "evidence": "a try statement's else clause runs when no exception occurs"
+      }
+    ],
+    "filter": {
+      "section": "Errors and Exceptions"
+    }
+  },
+  {
+    "id": "q17",
+    "split": "test",
+    "question": "If a try block raises an unhandled exception, does finally run before the exception is re-raised?",
+    "expected_answer": "Yes. An exception not handled by except is re-raised after finally executes.",
+    "gold": [
+      {
+        "source_id": "errors",
+        "page": 5,
+        "evidence": "If the exception is not handled by an !except clause, the exception is re-raised after the !finally clause has been executed."
+      }
+    ]
+  },
+  {
+    "id": "q18",
+    "split": "test",
+    "question": "In the Classes chapter, how do instance variables differ from class variables in what they share?",
+    "expected_answer": "Instance variables hold data unique to each instance; class variables are shared by all instances.",
+    "gold": [
+      {
+        "source_id": "classes",
+        "page": 6,
+        "evidence": "Generally speaking, instance variables are for data unique to each instance and class variables are for attributes and methods shared by all instances of the class::"
+      }
+    ],
+    "filter": {
+      "section": "Classes"
+    }
+  },
+  {
+    "id": "q19",
+    "split": "test",
+    "question": "Does Python provide instance variables accessible only from inside an object, and what does a single leading underscore mean?",
+    "expected_answer": "Strictly private instance variables do not exist; a single leading underscore marks a non-public API convention.",
+    "gold": [
+      {
+        "source_id": "classes",
+        "page": 10,
+        "evidence": "\"Private\" instance variables that cannot be accessed except from inside an object don't exist in Python. However, there is a convention that is followed by most Python code: a name prefixed with an underscore (e.g. _spam) should be treated as a non-public part of the API (whether it is a function, a method or a data member)."
+      }
+    ]
+  },
+  {
+    "id": "q20",
+    "split": "test",
+    "question": "Which exception does an exhausted Python iterator raise to terminate a for loop?",
+    "expected_answer": "StopIteration.",
+    "gold": [
+      {
+        "source_id": "classes",
+        "page": 12,
+        "evidence": "When there are no more elements, ~iterator.__next__ raises a StopIteration exception which tells the !for loop to terminate."
+      }
+    ]
+  }
+]

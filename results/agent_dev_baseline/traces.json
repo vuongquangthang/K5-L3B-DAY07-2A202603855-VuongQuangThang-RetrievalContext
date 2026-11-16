@@ -1,0 +1,1762 @@
+[
+  {
+    "query_id": "q01",
+    "status": "answered",
+    "answer": "No, the given end point (stop value) is never part of the generated sequence [cf7be23a-7374-59e7-959c-f540f33b4073].",
+    "citations": [
+      "cf7be23a-7374-59e7-959c-f540f33b4073"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "Python range stop value inclusion",
+        "filter": null,
+        "results": [
+          {
+            "id": "cf7be23a-7374-59e7-959c-f540f33b4073",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 1,
+            "text": ">>> for i in range(5): ... print(i) ... 0 1 2 3 4\n\nThe given end point is never part of the generated sequence; range(10) generates 10 values, the legal indices for items of a sequence of length 10. It is possible to let the range start at another number, or to specify a different increment (even negative; sometimes this is called the 'step')::",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2419,
+              "end": 2765
+            },
+            "score": 0.5486503286750626,
+            "strategy": "dense"
+          },
+          {
+            "id": "c514adbe-31f3-51d7-8bb6-ff08f224a33d",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 2,
+            "text": ">>> list(range(5, 10)) [5, 6, 7, 8, 9]\n\n>>> list(range(0, 10, 3)) [0, 3, 6, 9]\n\n>>> list(range(-10, -100, -30)) [-10, -40, -70]\n\nTo iterate over the indices of a sequence, you can combine range and len as follows::\n\n>>> a = ['Mary', 'had', 'a', 'little', 'lamb'] >>> for i in range(len(a)): ... print(i, a[i]) ... 0 Mary 1 had 2 a 3 little 4 lamb\n\nIn most such cases, however, it is convenient to use the enumerate function, see tut-loopidioms.\n\nA strange thing happens if you just print a range::\n\n>>> range(10) range(0, 10)\n\nIn many ways the object returned by range behaves as if it is a list, but in fact it isn't. It is an object which returns the successive items of the desired sequence when you iterate over it, but it doesn't really make the list, thus saving space.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 775
+            },
+            "score": 0.4594252909577902,
+            "strategy": "dense"
+          },
+          {
+            "id": "07bcc693-e10a-57f2-96ad-38e38e024b50",
+            "source_id": "errors",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/errors.rst",
+            "page": 6,
+            "text": "* If the !try statement reaches a break, continue or return statement, the !finally clause will execute just prior to the !break, !continue or !return statement's execution.\n\n* If a !finally clause includes a !return statement, the returned value will be the one from the !finally clause's !return statement, not the value from the !try clause's !return statement.\n\nFor example::\n\n>>> def bool_return(): ... try: ... return True ... finally: ... return False ... >>> bool_return() False\n\nA more complicated example::",
+            "metadata": {
+              "section": "Errors and Exceptions",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 516
+            },
+            "score": 0.41565952089152713,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[cf7be23a-7374-59e7-959c-f540f33b4073 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst | page 1]\n>>> for i in range(5): ... print(i) ... 0 1 2 3 4\n\nThe given end point is never part of the generated sequence; range(10) generates 10 values, the legal indices for items of a sequence of length 10. It is possible to let the range start at another number, or to specify a different increment (even negative; sometimes this is called the 'step')::",
+        "context_ids": [
+          "cf7be23a-7374-59e7-959c-f540f33b4073"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_sec": 10.182
+  },
+  {
+    "query_id": "q02",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "Python nested loops break statement",
+        "filter": null,
+        "results": [
+          {
+            "id": "b113da58-005a-5943-9434-93bed8b8e58d",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 2,
+            "text": ">>> for num in range(2, 10): ... if num % 2 == 0: ... print(f\"Found an even number {num}\") ... continue ... print(f\"Found an odd number {num}\") ... Found an even number 2 Found an odd number 3 Found an even number 4 Found an odd number 5 Found an even number 6 Found an odd number 7 Found an even number 8 Found an odd number 9\n\n!else Clauses on Loops\n\nIn a !for or !while loop the !break statement may be paired with an !else clause. If the loop finishes without executing the !break, the !else clause executes.\n\nIn a for loop, the !else clause is executed after the loop finishes its final iteration, that is, if no break occurred.\n\nIn a while loop, it's executed after the loop's condition becomes false.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1654,
+              "end": 2361
+            },
+            "score": 0.5983879482051414,
+            "strategy": "dense"
+          },
+          {
+            "id": "724ff3cd-20d7-58b3-909e-d696897cd213",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 3,
+            "text": "This is exemplified in the following !for loop, which searches for prime numbers::\n\n>>> for n in range(2, 10): ... for x in range(2, n): ... if n % x == 0: ... print(n, 'equals', x, '*', n//x) ... break ... else: ... # loop fell through without finding a factor ... print(n, 'is a prime number') ... 2 is a prime number 3 is a prime number 4 equals 2 * 2 5 is a prime number 6 equals 2 * 3 7 is a prime number 8 equals 2 * 4 9 equals 3 * 3\n\n(Yes, this is the correct code. Look closely: the else clause belongs to the for loop, **not** the if statement.)\n\nOne way to think of the else clause is to imagine it paired with the if inside the loop. As the loop executes, it will run a sequence like if/if/if/else. The if is inside the loop, encountered a number of times. If the condition is ever true, a break will happen. If the condition is never true, the else clause outside the loop will execute.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 898
+            },
+            "score": 0.5312051867561085,
+            "strategy": "dense"
+          },
+          {
+            "id": "1c4739cb-ace9-53e0-b1e0-103222d1f4a3",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 2,
+            "text": "In either kind of loop, the !else clause is **not** executed if the loop was terminated by a break. Of course, other ways of ending the loop early, such as a return or a raised exception, will also skip execution of the else clause.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2363,
+              "end": 2595
+            },
+            "score": 0.5241566989914329,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[1c4739cb-ace9-53e0-b1e0-103222d1f4a3 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst | page 2]\nIn either kind of loop, the !else clause is **not** executed if the loop was terminated by a break. Of course, other ways of ending the loop early, such as a return or a raised exception, will also skip execution of the else clause.",
+        "context_ids": [
+          "1c4739cb-ace9-53e0-b1e0-103222d1f4a3"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "Python nested loops break statement inner outer",
+        "filter": null,
+        "results": [
+          {
+            "id": "b113da58-005a-5943-9434-93bed8b8e58d",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 2,
+            "text": ">>> for num in range(2, 10): ... if num % 2 == 0: ... print(f\"Found an even number {num}\") ... continue ... print(f\"Found an odd number {num}\") ... Found an even number 2 Found an odd number 3 Found an even number 4 Found an odd number 5 Found an even number 6 Found an odd number 7 Found an even number 8 Found an odd number 9\n\n!else Clauses on Loops\n\nIn a !for or !while loop the !break statement may be paired with an !else clause. If the loop finishes without executing the !break, the !else clause executes.\n\nIn a for loop, the !else clause is executed after the loop finishes its final iteration, that is, if no break occurred.\n\nIn a while loop, it's executed after the loop's condition becomes false.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1654,
+              "end": 2361
+            },
+            "score": 0.500726415924795,
+            "strategy": "dense"
+          },
+          {
+            "id": "724ff3cd-20d7-58b3-909e-d696897cd213",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 3,
+            "text": "This is exemplified in the following !for loop, which searches for prime numbers::\n\n>>> for n in range(2, 10): ... for x in range(2, n): ... if n % x == 0: ... print(n, 'equals', x, '*', n//x) ... break ... else: ... # loop fell through without finding a factor ... print(n, 'is a prime number') ... 2 is a prime number 3 is a prime number 4 equals 2 * 2 5 is a prime number 6 equals 2 * 3 7 is a prime number 8 equals 2 * 4 9 equals 3 * 3\n\n(Yes, this is the correct code. Look closely: the else clause belongs to the for loop, **not** the if statement.)\n\nOne way to think of the else clause is to imagine it paired with the if inside the loop. As the loop executes, it will run a sequence like if/if/if/else. The if is inside the loop, encountered a number of times. If the condition is ever true, a break will happen. If the condition is never true, the else clause outside the loop will execute.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 898
+            },
+            "score": 0.45399158832935826,
+            "strategy": "dense"
+          },
+          {
+            "id": "1c4739cb-ace9-53e0-b1e0-103222d1f4a3",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 2,
+            "text": "In either kind of loop, the !else clause is **not** executed if the loop was terminated by a break. Of course, other ways of ending the loop early, such as a return or a raised exception, will also skip execution of the else clause.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2363,
+              "end": 2595
+            },
+            "score": 0.44766010019359503,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[1c4739cb-ace9-53e0-b1e0-103222d1f4a3 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst | page 2]\nIn either kind of loop, the !else clause is **not** executed if the loop was terminated by a break. Of course, other ways of ending the loop early, such as a return or a raised exception, will also skip execution of the else clause.",
+        "context_ids": [
+          "1c4739cb-ace9-53e0-b1e0-103222d1f4a3"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 11.355
+  },
+  {
+    "query_id": "q03",
+    "status": "answered",
+    "answer": "A mutable default argument can retain data across calls because the default value is evaluated only once at the point of function definition in the defining scope, rather than being re-evaluated on each call [6b1ffb70-aa31-5125-9142-5ad3e70dffaa].",
+    "citations": [
+      "6b1ffb70-aa31-5125-9142-5ad3e70dffaa"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "More Control Flow Tools mutable default argument retain data across calls",
+        "filter": null,
+        "results": [
+          {
+            "id": "6b1ffb70-aa31-5125-9142-5ad3e70dffaa",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 7,
+            "text": "The default values are evaluated at the point of function definition in the *defining* scope, so that ::\n\ni = 5\n\ndef f(arg=i): print(arg)\n\ni = 6 f()\n\nwill print 5.\n\n**Important warning:** The default value is evaluated only once. This makes a difference when the default is a mutable object such as a list, dictionary, or instances of most classes. For example, the following function accumulates the arguments passed to it on subsequent calls::\n\ndef f(a, L=[]): L.append(a) return L\n\nprint(f(1)) print(f(2)) print(f(3))",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1991,
+              "end": 2511
+            },
+            "score": 0.49736024141260493,
+            "strategy": "dense"
+          },
+          {
+            "id": "dd0a1a93-ca83-5eef-99f3-25e8e3d4a781",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 8,
+            "text": "When a final formal parameter of the form **name is present, it receives a dictionary (see typesmapping) containing all keyword arguments except for those corresponding to a formal parameter. This may be combined with a formal parameter of the form *name (described in the next subsection) which receives a tuple <tut-tuples> containing the positional arguments beyond the formal parameter list. (*name must occur before **name.) For example, if we define a function like this::",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2048,
+              "end": 2526
+            },
+            "score": 0.3388292924235127,
+            "strategy": "dense"
+          },
+          {
+            "id": "1fe527be-9841-5446-b412-dedf9d84d9cc",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 8,
+            "text": "In a function call, keyword arguments must follow positional arguments. All the keyword arguments passed must match one of the arguments accepted by the function (e.g. actor is not a valid argument for the parrot function), and their order is not important. This also includes non-optional arguments (e.g. parrot(voltage=1000) is valid too). No argument may receive a value more than once. Here's an example that fails due to this restriction::\n\n>>> def function(a): ... pass ... >>> function(0, a=0) Traceback (most recent call last): File \"<stdin>\", line 1, in <module> TypeError: function() got multiple values for argument 'a'",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1416,
+              "end": 2046
+            },
+            "score": 0.3286592370760861,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[6b1ffb70-aa31-5125-9142-5ad3e70dffaa | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst | page 7]\nThe default values are evaluated at the point of function definition in the *defining* scope, so that ::\n\ni = 5\n\ndef f(arg=i): print(arg)\n\ni = 6 f()\n\nwill print 5.\n\n**Important warning:** The default value is evaluated only once. This makes a difference when the default is a mutable object such as a list, dictionary, or instances of most classes. For example, the following function accumulates the arguments passed to it on subsequent calls::\n\ndef f(a, L=[]): L.append(a) return L\n\nprint(f(1)) print(f(2)) print(f(3))",
+        "context_ids": [
+          "6b1ffb70-aa31-5125-9142-5ad3e70dffaa"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_sec": 18.611
+  },
+  {
+    "query_id": "q04",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "Python function parameters keyword-only",
+        "filter": null,
+        "results": [
+          {
+            "id": "f6b28f21-c2fa-5f1e-a8ca-381c3028532c",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 9,
+            "text": "By default, arguments may be passed to a Python function either by position or explicitly by keyword. For readability and performance, it makes sense to restrict the way arguments can be passed so that a developer need only look at the function definition to determine if items are passed by position, by position or keyword, or by keyword.\n\nA function definition may look like:\n\n.. code-block:: none\n\ndef f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2): ----------- ---------- ---------- | | | | Positional or keyword | | - Keyword only -- Positional only\n\nwhere / and * are optional. If used, these symbols indicate the kind of parameter by how the arguments may be passed to the function: positional-only, positional-or-keyword, and keyword-only. Keyword parameters are also referred to as named parameters.\n\nPositional-or-Keyword Arguments",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 856,
+              "end": 1695
+            },
+            "score": 0.7706671276610649,
+            "strategy": "dense"
+          },
+          {
+            "id": "e7cdcdc0-7730-5771-962a-ddf807fd0f34",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 11,
+            "text": "In other words, the names of positional-only parameters can be used in **kwds without ambiguity.\n\nRecap\n\nThe use case will determine which parameters to use in the function definition::\n\ndef f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):\n\nAs guidance:\n\n* Use positional-only if you want the name of the parameters to not be available to the user. This is useful when parameter names have no real meaning, if you want to enforce the order of the arguments when the function is called or if you need to take some positional parameters and arbitrary keywords. * Use keyword-only when names have meaning and the function definition is more understandable by being explicit with names or you want to prevent users relying on the position of the argument being passed. * For an API, use positional-only to prevent breaking API changes if the parameter's name is modified in the future.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 877
+            },
+            "score": 0.6538359044624736,
+            "strategy": "dense"
+          },
+          {
+            "id": "1fe527be-9841-5446-b412-dedf9d84d9cc",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 8,
+            "text": "In a function call, keyword arguments must follow positional arguments. All the keyword arguments passed must match one of the arguments accepted by the function (e.g. actor is not a valid argument for the parrot function), and their order is not important. This also includes non-optional arguments (e.g. parrot(voltage=1000) is valid too). No argument may receive a value more than once. Here's an example that fails due to this restriction::\n\n>>> def function(a): ... pass ... >>> function(0, a=0) Traceback (most recent call last): File \"<stdin>\", line 1, in <module> TypeError: function() got multiple values for argument 'a'",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1416,
+              "end": 2046
+            },
+            "score": 0.6310151108008442,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[1fe527be-9841-5446-b412-dedf9d84d9cc | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst | page 8]\nIn a function call, keyword arguments must follow positional arguments. All the keyword arguments passed must match one of the arguments accepted by the function (e.g. actor is not a valid argument for the parrot function), and their order is not important. This also includes non-optional arguments (e.g. parrot(voltage=1000) is valid too). No argument may receive a value more than once. Here's an example that fails due to this restriction::\n\n>>> def function(a): ... pass ... >>> function(0, a=0) Traceback (most recent call last): File \"<stdin>\", line 1, in <module> TypeError: function() got multiple values for argument 'a'",
+        "context_ids": [
+          "1fe527be-9841-5446-b412-dedf9d84d9cc"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "keyword-only parameters asterisk function definition",
+        "filter": null,
+        "results": [
+          {
+            "id": "dd0a1a93-ca83-5eef-99f3-25e8e3d4a781",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 8,
+            "text": "When a final formal parameter of the form **name is present, it receives a dictionary (see typesmapping) containing all keyword arguments except for those corresponding to a formal parameter. This may be combined with a formal parameter of the form *name (described in the next subsection) which receives a tuple <tut-tuples> containing the positional arguments beyond the formal parameter list. (*name must occur before **name.) For example, if we define a function like this::",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2048,
+              "end": 2526
+            },
+            "score": 0.6298483509713679,
+            "strategy": "dense"
+          },
+          {
+            "id": "73981aba-435b-5100-936f-9526e6e31b0f",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 9,
+            "text": "If / and * are not present in the function definition, arguments may be passed to a function by position or by keyword.\n\nPositional-Only Parameters\n\nLooking at this in a bit more detail, it is possible to mark certain parameters as *positional-only*. If *positional-only*, the parameters' order matters, and the parameters cannot be passed by keyword. Positional-only parameters are placed before a / (forward-slash). The / is used to logically separate the positional-only parameters from the rest of the parameters. If there is no / in the function definition, there are no positional-only parameters.\n\nParameters following the / may be *positional-or-keyword* or *keyword-only*.\n\nKeyword-Only Arguments\n\nTo mark parameters as *keyword-only*, indicating the parameters must be passed by keyword argument, place an * in the arguments list just before the first *keyword-only* parameter.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1697,
+              "end": 2584
+            },
+            "score": 0.6239226950454151,
+            "strategy": "dense"
+          },
+          {
+            "id": "780bcd67-6898-5a82-a8de-8ec8f76b6ba8",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 5,
+            "text": "The keyword def introduces a function *definition*. It must be followed by the function name and the parenthesized list of formal parameters. The statements that form the body of the function start at the next line, and must be indented.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2404,
+              "end": 2641
+            },
+            "score": 0.6157985468331078,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[1fe527be-9841-5446-b412-dedf9d84d9cc | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst | page 8]\nIn a function call, keyword arguments must follow positional arguments. All the keyword arguments passed must match one of the arguments accepted by the function (e.g. actor is not a valid argument for the parrot function), and their order is not important. This also includes non-optional arguments (e.g. parrot(voltage=1000) is valid too). No argument may receive a value more than once. Here's an example that fails due to this restriction::\n\n>>> def function(a): ... pass ... >>> function(0, a=0) Traceback (most recent call last): File \"<stdin>\", line 1, in <module> TypeError: function() got multiple values for argument 'a'",
+        "context_ids": [
+          "1fe527be-9841-5446-b412-dedf9d84d9cc"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 24.444
+  },
+  {
+    "query_id": "q05",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "list.remove value not found occurrence removed",
+        "filter": null,
+        "results": [
+          {
+            "id": "ddc521c8-9f81-5bba-b03d-a096ea24a475",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 4,
+            "text": "There is a way to remove an item from a list given its index instead of its value: the del statement. This differs from the ~list.pop method which returns a value. The !del statement can also be used to remove slices from a list or clear the entire list (which we did earlier by assignment of an empty list to the slice). For example::\n\n>>> a = [-1, 1, 66.25, 333, 333, 1234.5] >>> del a[0] >>> a [1, 66.25, 333, 333, 1234.5] >>> del a[2:4] >>> a [1, 66.25, 1234.5] >>> del a[:] >>> a []\n\ndel can also be used to delete entire variables::\n\n>>> del a\n\nReferencing the name a hereafter is an error (at least until another value is assigned to it). We'll find other uses for del later.\n\nTuples and Sequences",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1287,
+              "end": 1991
+            },
+            "score": 0.4908215748026578,
+            "strategy": "dense"
+          },
+          {
+            "id": "d7b4d671-39f9-5a91-a1f2-d09d6ef6814e",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 1,
+            "text": "Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list. It raises an IndexError if the list is empty or the index is outside the list range.\n\n.. method:: list.clear()\n\nRemove all items from the list. Equivalent to del a[:].\n\n.. method:: list.index(x[, start[, end]])\n\nReturn zero-based index in the list of the first item whose value is equal to *x*. Raises a ValueError if there is no such item.\n\nThe optional arguments *start* and *end* are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the *start* argument.\n\n.. method:: list.count(x)\n\nReturn the number of times *x* appears in the list.\n\n.. method:: list.sort(*, key=None, reverse=False)",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 882,
+              "end": 1769
+            },
+            "score": 0.4665085814607932,
+            "strategy": "dense"
+          },
+          {
+            "id": "585843d9-12c7-5cf3-b82f-300a4dcf8da7",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 5,
+            "text": ">>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'} >>> print(basket) # show that duplicates have been removed {'orange', 'banana', 'pear', 'apple'} >>> 'orange' in basket # fast membership testing True >>> 'crabgrass' in basket False",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2458,
+              "end": 2710
+            },
+            "score": 0.4178070142778259,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[585843d9-12c7-5cf3-b82f-300a4dcf8da7 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst | page 5]\n>>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'} >>> print(basket) # show that duplicates have been removed {'orange', 'banana', 'pear', 'apple'} >>> 'orange' in basket # fast membership testing True >>> 'crabgrass' in basket False",
+        "context_ids": [
+          "585843d9-12c7-5cf3-b82f-300a4dcf8da7"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "list.remove value not found exception first occurrence",
+        "filter": null,
+        "results": [
+          {
+            "id": "d7b4d671-39f9-5a91-a1f2-d09d6ef6814e",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 1,
+            "text": "Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list. It raises an IndexError if the list is empty or the index is outside the list range.\n\n.. method:: list.clear()\n\nRemove all items from the list. Equivalent to del a[:].\n\n.. method:: list.index(x[, start[, end]])\n\nReturn zero-based index in the list of the first item whose value is equal to *x*. Raises a ValueError if there is no such item.\n\nThe optional arguments *start* and *end* are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the *start* argument.\n\n.. method:: list.count(x)\n\nReturn the number of times *x* appears in the list.\n\n.. method:: list.sort(*, key=None, reverse=False)",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 882,
+              "end": 1769
+            },
+            "score": 0.47631107221246066,
+            "strategy": "dense"
+          },
+          {
+            "id": "ddc521c8-9f81-5bba-b03d-a096ea24a475",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 4,
+            "text": "There is a way to remove an item from a list given its index instead of its value: the del statement. This differs from the ~list.pop method which returns a value. The !del statement can also be used to remove slices from a list or clear the entire list (which we did earlier by assignment of an empty list to the slice). For example::\n\n>>> a = [-1, 1, 66.25, 333, 333, 1234.5] >>> del a[0] >>> a [1, 66.25, 333, 333, 1234.5] >>> del a[2:4] >>> a [1, 66.25, 1234.5] >>> del a[:] >>> a []\n\ndel can also be used to delete entire variables::\n\n>>> del a\n\nReferencing the name a hereafter is an error (at least until another value is assigned to it). We'll find other uses for del later.\n\nTuples and Sequences",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1287,
+              "end": 1991
+            },
+            "score": 0.443474361734422,
+            "strategy": "dense"
+          },
+          {
+            "id": "585843d9-12c7-5cf3-b82f-300a4dcf8da7",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 5,
+            "text": ">>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'} >>> print(basket) # show that duplicates have been removed {'orange', 'banana', 'pear', 'apple'} >>> 'orange' in basket # fast membership testing True >>> 'crabgrass' in basket False",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2458,
+              "end": 2710
+            },
+            "score": 0.38279633518027156,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[585843d9-12c7-5cf3-b82f-300a4dcf8da7 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst | page 5]\n>>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'} >>> print(basket) # show that duplicates have been removed {'orange', 'banana', 'pear', 'apple'} >>> 'orange' in basket # fast membership testing True >>> 'crabgrass' in basket False",
+        "context_ids": [
+          "585843d9-12c7-5cf3-b82f-300a4dcf8da7"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 38.353
+  },
+  {
+    "query_id": "q06",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "python list pop method return value empty list",
+        "filter": null,
+        "results": [
+          {
+            "id": "61062a83-cf42-5976-ae4d-f2248617bd6d",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 7,
+            "text": "This example, as usual, demonstrates some new Python features:\n\n* The return statement returns with a value from a function. !return without an expression argument returns None. Falling off the end of a function also returns None.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 230
+            },
+            "score": 0.4372681365818568,
+            "strategy": "dense"
+          },
+          {
+            "id": "d7b4d671-39f9-5a91-a1f2-d09d6ef6814e",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 1,
+            "text": "Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list. It raises an IndexError if the list is empty or the index is outside the list range.\n\n.. method:: list.clear()\n\nRemove all items from the list. Equivalent to del a[:].\n\n.. method:: list.index(x[, start[, end]])\n\nReturn zero-based index in the list of the first item whose value is equal to *x*. Raises a ValueError if there is no such item.\n\nThe optional arguments *start* and *end* are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the *start* argument.\n\n.. method:: list.count(x)\n\nReturn the number of times *x* appears in the list.\n\n.. method:: list.sort(*, key=None, reverse=False)",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 882,
+              "end": 1769
+            },
+            "score": 0.41699529607350716,
+            "strategy": "dense"
+          },
+          {
+            "id": "c1ab5fe5-5f25-5f75-953b-4257c4e6004c",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 1,
+            "text": "Data Structures\n\nThis chapter describes some things you've learned about already in more detail, and adds some new things as well.\n\nMore on Lists\n\nThe list data type has some more methods. Here are all of the methods of list objects:\n\n.. method:: list.append(x)\n\nAdd an item to the end of the list. Equivalent to a[len(a):] = [x].\n\n.. method:: list.extend(iterable)\n\nExtend the list by appending all the items from the iterable. Equivalent to a[len(a):] = iterable.\n\n.. method:: list.insert(i, x)\n\nInsert an item at a given position. The first argument is the index of the element before which to insert, so a.insert(0, x) inserts at the front of the list, and a.insert(len(a), x) is equivalent to a.append(x).\n\n.. method:: list.remove(x)\n\nRemove the first item from the list whose value is equal to *x*. It raises a ValueError if there is no such item.\n\n.. method:: list.pop([i])",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 880
+            },
+            "score": 0.40728654096394357,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[61062a83-cf42-5976-ae4d-f2248617bd6d | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst | page 7]\nThis example, as usual, demonstrates some new Python features:\n\n* The return statement returns with a value from a function. !return without an expression argument returns None. Falling off the end of a function also returns None.",
+        "context_ids": [
+          "61062a83-cf42-5976-ae4d-f2248617bd6d"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "list.pop() return value empty list indexError",
+        "filter": null,
+        "results": [
+          {
+            "id": "d7b4d671-39f9-5a91-a1f2-d09d6ef6814e",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 1,
+            "text": "Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list. It raises an IndexError if the list is empty or the index is outside the list range.\n\n.. method:: list.clear()\n\nRemove all items from the list. Equivalent to del a[:].\n\n.. method:: list.index(x[, start[, end]])\n\nReturn zero-based index in the list of the first item whose value is equal to *x*. Raises a ValueError if there is no such item.\n\nThe optional arguments *start* and *end* are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the *start* argument.\n\n.. method:: list.count(x)\n\nReturn the number of times *x* appears in the list.\n\n.. method:: list.sort(*, key=None, reverse=False)",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 882,
+              "end": 1769
+            },
+            "score": 0.4635508433289716,
+            "strategy": "dense"
+          },
+          {
+            "id": "3acef0c9-1f4d-5e15-a427-e3c789aa130c",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 2,
+            "text": "The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (\"last-in, first-out\"). To add an item to the top of the stack, use ~list.append. To retrieve an item from the top of the stack, use ~list.pop without an explicit index. For example::\n\n>>> stack = [3, 4, 5] >>> stack.append(6) >>> stack.append(7) >>> stack [3, 4, 5, 6, 7] >>> stack.pop() 7 >>> stack [3, 4, 5, 6] >>> stack.pop() 6 >>> stack.pop() 5 >>> stack [3, 4]\n\nUsing Lists as Queues\n\n.. sectionauthor:: Ka-Ping Yee <ping@lfw.org>",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 637,
+              "end": 1194
+            },
+            "score": 0.42333558789035086,
+            "strategy": "dense"
+          },
+          {
+            "id": "ddc521c8-9f81-5bba-b03d-a096ea24a475",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 4,
+            "text": "There is a way to remove an item from a list given its index instead of its value: the del statement. This differs from the ~list.pop method which returns a value. The !del statement can also be used to remove slices from a list or clear the entire list (which we did earlier by assignment of an empty list to the slice). For example::\n\n>>> a = [-1, 1, 66.25, 333, 333, 1234.5] >>> del a[0] >>> a [1, 66.25, 333, 333, 1234.5] >>> del a[2:4] >>> a [1, 66.25, 1234.5] >>> del a[:] >>> a []\n\ndel can also be used to delete entire variables::\n\n>>> del a\n\nReferencing the name a hereafter is an error (at least until another value is assigned to it). We'll find other uses for del later.\n\nTuples and Sequences",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1287,
+              "end": 1991
+            },
+            "score": 0.4184345035530658,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[61062a83-cf42-5976-ae4d-f2248617bd6d | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst | page 7]\nThis example, as usual, demonstrates some new Python features:\n\n* The return statement returns with a value from a function. !return without an expression argument returns None. Falling off the end of a function also returns None.",
+        "context_ids": [
+          "61062a83-cf42-5976-ae4d-f2248617bd6d"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 6.126
+  },
+  {
+    "query_id": "q07",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "tuple dictionary key mutable object",
+        "filter": null,
+        "results": [
+          {
+            "id": "aa5af88c-6cf0-53ce-b91d-d2b9a961c38b",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 6,
+            "text": "Another useful data type built into Python is the *dictionary* (see typesmapping). Dictionaries are sometimes found in other languages as \"associative memories\" or \"associative arrays\". Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by *keys*, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can't use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like ~list.append and ~list.extend.",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 606,
+              "end": 1291
+            },
+            "score": 0.5359876782482575,
+            "strategy": "dense"
+          },
+          {
+            "id": "0296acff-bacc-5bef-af32-a80729c36b20",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 5,
+            "text": "As you see, on output tuples are always enclosed in parentheses, so that nested tuples are interpreted correctly; they may be input with or without surrounding parentheses, although often parentheses are necessary anyway (if the tuple is part of a larger expression). It is not possible to assign to the individual items of a tuple, however it is possible to create tuples which contain mutable objects, such as lists.\n\nThough tuples may seem similar to lists, they are often used in different situations and for different purposes. Tuples are immutable, and usually contain a heterogeneous sequence of elements that are accessed via unpacking (see later in this section) or indexing (or even by attribute in the case of namedtuples <collections.namedtuple>). Lists are mutable, and their elements are usually homogeneous and are accessed by iterating over the list.",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 866
+            },
+            "score": 0.49949280208364366,
+            "strategy": "dense"
+          },
+          {
+            "id": "5e888718-3dd3-533b-a6f4-654ed397fff8",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 6,
+            "text": "It is best to think of a dictionary as a set of *key: value* pairs, with the requirement that the keys are unique (within one dictionary). A pair of braces creates an empty dictionary: {}. Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary; this is also the way dictionaries are written on output.\n\nThe main operations on a dictionary are storing a value with some key and extracting the value given the key. It is also possible to delete a key:value pair with del. If you store using a key that is already in use, the old value associated with that key is forgotten. It is an error to extract a value using a non-existent key.",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1293,
+              "end": 1984
+            },
+            "score": 0.4641050167595937,
+            "strategy": "dense"
+          }
+        ],
+        "context": "",
+        "context_ids": []
+      },
+      {
+        "event": "search",
+        "query": "tuple dictionary key mutable object",
+        "filter": null,
+        "results": [
+          {
+            "id": "aa5af88c-6cf0-53ce-b91d-d2b9a961c38b",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 6,
+            "text": "Another useful data type built into Python is the *dictionary* (see typesmapping). Dictionaries are sometimes found in other languages as \"associative memories\" or \"associative arrays\". Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by *keys*, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can't use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like ~list.append and ~list.extend.",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 606,
+              "end": 1291
+            },
+            "score": 0.5359876782482575,
+            "strategy": "dense"
+          },
+          {
+            "id": "0296acff-bacc-5bef-af32-a80729c36b20",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 5,
+            "text": "As you see, on output tuples are always enclosed in parentheses, so that nested tuples are interpreted correctly; they may be input with or without surrounding parentheses, although often parentheses are necessary anyway (if the tuple is part of a larger expression). It is not possible to assign to the individual items of a tuple, however it is possible to create tuples which contain mutable objects, such as lists.\n\nThough tuples may seem similar to lists, they are often used in different situations and for different purposes. Tuples are immutable, and usually contain a heterogeneous sequence of elements that are accessed via unpacking (see later in this section) or indexing (or even by attribute in the case of namedtuples <collections.namedtuple>). Lists are mutable, and their elements are usually homogeneous and are accessed by iterating over the list.",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 866
+            },
+            "score": 0.49949280208364366,
+            "strategy": "dense"
+          },
+          {
+            "id": "5e888718-3dd3-533b-a6f4-654ed397fff8",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 6,
+            "text": "It is best to think of a dictionary as a set of *key: value* pairs, with the requirement that the keys are unique (within one dictionary). A pair of braces creates an empty dictionary: {}. Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary; this is also the way dictionaries are written on output.\n\nThe main operations on a dictionary are storing a value with some key and extracting the value given the key. It is also possible to delete a key:value pair with del. If you store using a key that is already in use, the old value associated with that key is forgotten. It is an error to extract a value using a non-existent key.",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1293,
+              "end": 1984
+            },
+            "score": 0.4641050167595937,
+            "strategy": "dense"
+          }
+        ],
+        "context": "",
+        "context_ids": []
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 4.63
+  },
+  {
+    "query_id": "q08",
+    "status": "answered",
+    "answer": "Performing list(d) on a dictionary returns a list of all the keys used in the dictionary in insertion order [67cc66e9-81fa-536c-a2b7-8ddf72adb3b3].",
+    "citations": [
+      "67cc66e9-81fa-536c-a2b7-8ddf72adb3b3"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "Data Structures list d dictionary keys order",
+        "filter": null,
+        "results": [
+          {
+            "id": "67cc66e9-81fa-536c-a2b7-8ddf72adb3b3",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 6,
+            "text": "Performing list(d) on a dictionary returns a list of all the keys used in the dictionary, in insertion order (if you want it sorted, just use sorted(d) instead). To check whether a single key is in the dictionary, use the in keyword.\n\nHere is a small example using a dictionary::\n\n>>> tel = {'jack': 4098, 'sape': 4139} >>> tel['guido'] = 4127 >>> tel {'jack': 4098, 'sape': 4139, 'guido': 4127} >>> tel['jack'] 4098 >>> del tel['sape'] >>> tel['irv'] = 4127 >>> tel {'jack': 4098, 'guido': 4127, 'irv': 4127} >>> list(tel) ['jack', 'guido', 'irv'] >>> sorted(tel) ['guido', 'irv', 'jack'] >>> 'guido' in tel True >>> 'jack' not in tel False",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1986,
+              "end": 2627
+            },
+            "score": 0.5401209891564429,
+            "strategy": "dense"
+          },
+          {
+            "id": "5e888718-3dd3-533b-a6f4-654ed397fff8",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 6,
+            "text": "It is best to think of a dictionary as a set of *key: value* pairs, with the requirement that the keys are unique (within one dictionary). A pair of braces creates an empty dictionary: {}. Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary; this is also the way dictionaries are written on output.\n\nThe main operations on a dictionary are storing a value with some key and extracting the value given the key. It is also possible to delete a key:value pair with del. If you store using a key that is already in use, the old value associated with that key is forgotten. It is an error to extract a value using a non-existent key.",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1293,
+              "end": 1984
+            },
+            "score": 0.4845027099468624,
+            "strategy": "dense"
+          },
+          {
+            "id": "aa5af88c-6cf0-53ce-b91d-d2b9a961c38b",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 6,
+            "text": "Another useful data type built into Python is the *dictionary* (see typesmapping). Dictionaries are sometimes found in other languages as \"associative memories\" or \"associative arrays\". Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by *keys*, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can't use lists as keys, since lists can be modified in place using index assignments, slice assignments, or methods like ~list.append and ~list.extend.",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 606,
+              "end": 1291
+            },
+            "score": 0.4841642764600206,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[67cc66e9-81fa-536c-a2b7-8ddf72adb3b3 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst | page 6]\nPerforming list(d) on a dictionary returns a list of all the keys used in the dictionary, in insertion order (if you want it sorted, just use sorted(d) instead). To check whether a single key is in the dictionary, use the in keyword.\n\nHere is a small example using a dictionary::\n\n>>> tel = {'jack': 4098, 'sape': 4139} >>> tel['guido'] = 4127 >>> tel {'jack': 4098, 'sape': 4139, 'guido': 4127} >>> tel['jack'] 4098 >>> del tel['sape'] >>> tel['irv'] = 4127 >>> tel {'jack': 4098, 'guido': 4127, 'irv': 4127} >>> list(tel) ['jack', 'guido', 'irv'] >>> sorted(tel) ['guido', 'irv', 'jack'] >>> 'guido' in tel True >>> 'jack' not in tel False",
+        "context_ids": [
+          "67cc66e9-81fa-536c-a2b7-8ddf72adb3b3"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_sec": 12.345
+  },
+  {
+    "query_id": "q09",
+    "status": "answered",
+    "answer": "To implement pushing and popping a last-in first-out stack, use `list.append` to add an item to the top of the stack and `list.pop` without an explicit index to retrieve an item from the top of the stack [3acef0c9-1f4d-5e15-a427-e3c789aa130c].",
+    "citations": [
+      "3acef0c9-1f4d-5e15-a427-e3c789aa130c"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "list operations pushing popping last-in first-out stack",
+        "filter": null,
+        "results": [
+          {
+            "id": "3acef0c9-1f4d-5e15-a427-e3c789aa130c",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 2,
+            "text": "The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (\"last-in, first-out\"). To add an item to the top of the stack, use ~list.append. To retrieve an item from the top of the stack, use ~list.pop without an explicit index. For example::\n\n>>> stack = [3, 4, 5] >>> stack.append(6) >>> stack.append(7) >>> stack [3, 4, 5, 6, 7] >>> stack.pop() 7 >>> stack [3, 4, 5, 6] >>> stack.pop() 6 >>> stack.pop() 5 >>> stack [3, 4]\n\nUsing Lists as Queues\n\n.. sectionauthor:: Ka-Ping Yee <ping@lfw.org>",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 637,
+              "end": 1194
+            },
+            "score": 0.523929870404718,
+            "strategy": "dense"
+          },
+          {
+            "id": "d7b4d671-39f9-5a91-a1f2-d09d6ef6814e",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 1,
+            "text": "Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list. It raises an IndexError if the list is empty or the index is outside the list range.\n\n.. method:: list.clear()\n\nRemove all items from the list. Equivalent to del a[:].\n\n.. method:: list.index(x[, start[, end]])\n\nReturn zero-based index in the list of the first item whose value is equal to *x*. Raises a ValueError if there is no such item.\n\nThe optional arguments *start* and *end* are interpreted as in the slice notation and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the *start* argument.\n\n.. method:: list.count(x)\n\nReturn the number of times *x* appears in the list.\n\n.. method:: list.sort(*, key=None, reverse=False)",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 882,
+              "end": 1769
+            },
+            "score": 0.40633046499761116,
+            "strategy": "dense"
+          },
+          {
+            "id": "c1ab5fe5-5f25-5f75-953b-4257c4e6004c",
+            "source_id": "datastructures",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst",
+            "page": 1,
+            "text": "Data Structures\n\nThis chapter describes some things you've learned about already in more detail, and adds some new things as well.\n\nMore on Lists\n\nThe list data type has some more methods. Here are all of the methods of list objects:\n\n.. method:: list.append(x)\n\nAdd an item to the end of the list. Equivalent to a[len(a):] = [x].\n\n.. method:: list.extend(iterable)\n\nExtend the list by appending all the items from the iterable. Equivalent to a[len(a):] = iterable.\n\n.. method:: list.insert(i, x)\n\nInsert an item at a given position. The first argument is the index of the element before which to insert, so a.insert(0, x) inserts at the front of the list, and a.insert(len(a), x) is equivalent to a.append(x).\n\n.. method:: list.remove(x)\n\nRemove the first item from the list whose value is equal to *x*. It raises a ValueError if there is no such item.\n\n.. method:: list.pop([i])",
+            "metadata": {
+              "section": "Data Structures",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 880
+            },
+            "score": 0.3880800667427027,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[3acef0c9-1f4d-5e15-a427-e3c789aa130c | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/datastructures.rst | page 2]\nThe list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (\"last-in, first-out\"). To add an item to the top of the stack, use ~list.append. To retrieve an item from the top of the stack, use ~list.pop without an explicit index. For example::\n\n>>> stack = [3, 4, 5] >>> stack.append(6) >>> stack.append(7) >>> stack [3, 4, 5, 6, 7] >>> stack.pop() 7 >>> stack [3, 4, 5, 6] >>> stack.pop() 6 >>> stack.pop() 5 >>> stack [3, 4]\n\nUsing Lists as Queues\n\n.. sectionauthor:: Ka-Ping Yee <ping@lfw.org>",
+        "context_ids": [
+          "3acef0c9-1f4d-5e15-a427-e3c789aa130c"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_sec": 2.948
+  },
+  {
+    "query_id": "q10",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "__name__ value when Python module is executed as a script",
+        "filter": null,
+        "results": [
+          {
+            "id": "48cf042e-3bf5-538b-bac1-86559859f581",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 2,
+            "text": "Namespaces are created at different moments and have different lifetimes. The namespace containing the built-in names is created when the Python interpreter starts up, and is never deleted. The global namespace for a module is created when the module definition is read in; normally, module namespaces also last until the interpreter quits. The statements executed by the top-level invocation of the interpreter, either read from a script file or interactively, are considered part of a module called __main__, so they have their own global namespace. (The built-in names actually also live in a module; this is called builtins.)",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1995,
+              "end": 2624
+            },
+            "score": 0.6086780861870389,
+            "strategy": "dense"
+          },
+          {
+            "id": "dd45dfb8-41f1-52ed-adcb-96c3977d3396",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 1,
+            "text": "A module can contain executable statements as well as function definitions. These statements are intended to initialize the module. They are executed only the *first* time the module name is encountered in an import statement. [#]_ (They are also run if the file is executed as a script.)",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2254,
+              "end": 2542
+            },
+            "score": 0.5675492277802849,
+            "strategy": "dense"
+          },
+          {
+            "id": "29e70de5-788b-598c-8004-1320bdae4729",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 13,
+            "text": ".. [#] Except for one thing. Module objects have a secret read-only attribute called ~object.__dict__ which returns the dictionary used to implement the module's namespace; the name __dict__ is an attribute but not a global name. Obviously, using this violates the abstraction of namespace implementation, and should be restricted to things like post-mortem debuggers.",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1385,
+              "end": 1753
+            },
+            "score": 0.558660417463174,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[48cf042e-3bf5-538b-bac1-86559859f581 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 2]\nNamespaces are created at different moments and have different lifetimes. The namespace containing the built-in names is created when the Python interpreter starts up, and is never deleted. The global namespace for a module is created when the module definition is read in; normally, module namespaces also last until the interpreter quits. The statements executed by the top-level invocation of the interpreter, either read from a script file or interactively, are considered part of a module called __main__, so they have their own global namespace. (The built-in names actually also live in a module; this is called builtins.)",
+        "context_ids": [
+          "48cf042e-3bf5-538b-bac1-86559859f581"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "__name__ script execution main python",
+        "filter": null,
+        "results": [
+          {
+            "id": "48cf042e-3bf5-538b-bac1-86559859f581",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 2,
+            "text": "Namespaces are created at different moments and have different lifetimes. The namespace containing the built-in names is created when the Python interpreter starts up, and is never deleted. The global namespace for a module is created when the module definition is read in; normally, module namespaces also last until the interpreter quits. The statements executed by the top-level invocation of the interpreter, either read from a script file or interactively, are considered part of a module called __main__, so they have their own global namespace. (The built-in names actually also live in a module; this is called builtins.)",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1995,
+              "end": 2624
+            },
+            "score": 0.5542066801244759,
+            "strategy": "dense"
+          },
+          {
+            "id": "86367c78-11a2-591c-a429-7886ca55cbeb",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 3,
+            "text": ".. note:: On file systems which support symlinks, the directory containing the input script is calculated after the symlink is followed. In other words the directory containing the symlink is **not** added to the module search path.\n\nAfter initialization, Python programs can modify sys.path. The directory containing the script being run is placed at the beginning of the search path, ahead of the standard library path. This means that scripts in that directory will be loaded instead of modules of the same name in the library directory. This is an error unless the replacement is intended. See section tut-standardmodules for more information.\n\n.. % Do we need stuff on zip files etc. ? DUBOIS\n\n\"Compiled\" Python files",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1550,
+              "end": 2272
+            },
+            "score": 0.5128380921884228,
+            "strategy": "dense"
+          },
+          {
+            "id": "1799f3c3-b53b-5769-b5f5-a654f3b132c5",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 4,
+            "text": "Python comes with a library of standard modules, described in a separate document, the Python Library Reference (\"Library Reference\" hereafter). Some modules are built into the interpreter; these provide access to operations that are not part of the core of the language but are nevertheless built in, either for efficiency or to provide access to operating system primitives such as system calls. The set of such modules is a configuration option which also depends on the underlying platform. For example, the winreg module is only provided on Windows systems. One particular module deserves some attention: sys, which is built into every Python interpreter. The variables sys.ps1 and sys.ps2 define the strings used as primary and secondary prompts::\n\n>>> import sys >>> sys.ps1 '>>> ' >>> sys.ps2 '... ' >>> sys.ps1 = 'C> ' C> print('Yuck!') Yuck! C>",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1574,
+              "end": 2428
+            },
+            "score": 0.48336268230994917,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[48cf042e-3bf5-538b-bac1-86559859f581 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 2]\nNamespaces are created at different moments and have different lifetimes. The namespace containing the built-in names is created when the Python interpreter starts up, and is never deleted. The global namespace for a module is created when the module definition is read in; normally, module namespaces also last until the interpreter quits. The statements executed by the top-level invocation of the interpreter, either read from a script file or interactively, are considered part of a module called __main__, so they have their own global namespace. (The built-in names actually also live in a module; this is called builtins.)",
+        "context_ids": [
+          "48cf042e-3bf5-538b-bac1-86559859f581"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 13.109
+  },
+  {
+    "query_id": "q11",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "Python search path spam py built-in modules",
+        "filter": null,
+        "results": [
+          {
+            "id": "96e5e9e0-a0db-5bf7-b0b0-8c52d315df5d",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 3,
+            "text": "When a module named !spam is imported, the interpreter first searches for a built-in module with that name. These module names are listed in sys.builtin_module_names. If not found, it then searches for a file named spam.py in a list of directories given by the variable sys.path. sys.path is initialized from these locations:\n\n* The directory containing the input script (or the current directory when no file is specified). * PYTHONPATH (a list of directory names, with the same syntax as the shell variable PATH). * The installation-dependent default (by convention including a site-packages directory, handled by the site module).\n\nMore details are at sys-path-init.",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 879,
+              "end": 1548
+            },
+            "score": 0.7231501609737343,
+            "strategy": "dense"
+          },
+          {
+            "id": "86367c78-11a2-591c-a429-7886ca55cbeb",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 3,
+            "text": ".. note:: On file systems which support symlinks, the directory containing the input script is calculated after the symlink is followed. In other words the directory containing the symlink is **not** added to the module search path.\n\nAfter initialization, Python programs can modify sys.path. The directory containing the script being run is placed at the beginning of the search path, ahead of the standard library path. This means that scripts in that directory will be loaded instead of modules of the same name in the library directory. This is an error unless the replacement is intended. See section tut-standardmodules for more information.\n\n.. % Do we need stuff on zip files etc. ? DUBOIS\n\n\"Compiled\" Python files",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1550,
+              "end": 2272
+            },
+            "score": 0.5496438819551062,
+            "strategy": "dense"
+          },
+          {
+            "id": "17e59d32-4377-5a79-a4fa-0a379e2bd091",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 3,
+            "text": "To speed up loading modules, Python caches the compiled version of each module in the __pycache__ directory under the name module.{version}.pyc, where the version encodes the format of the compiled file; it generally contains the Python version number. For example, in CPython release 3.3 the compiled version of spam.py would be cached as __pycache__/spam.cpython-33.pyc. This naming convention allows compiled modules from different releases and different versions of Python to coexist.",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2274,
+              "end": 2762
+            },
+            "score": 0.5251718424084979,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[17e59d32-4377-5a79-a4fa-0a379e2bd091 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst | page 3]\nTo speed up loading modules, Python caches the compiled version of each module in the __pycache__ directory under the name module.{version}.pyc, where the version encodes the format of the compiled file; it generally contains the Python version number. For example, in CPython release 3.3 the compiled version of spam.py would be cached as __pycache__/spam.cpython-33.pyc. This naming convention allows compiled modules from different releases and different versions of Python to coexist.",
+        "context_ids": [
+          "17e59d32-4377-5a79-a4fa-0a379e2bd091"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "Python search path sys path initialization modules",
+        "filter": null,
+        "results": [
+          {
+            "id": "9ba9cf7a-bd38-5c3a-b041-9822fe7bcca9",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 5,
+            "text": "The variable sys.path is a list of strings that determines the interpreter's search path for modules. It is initialized to a default path taken from the environment variable PYTHONPATH, or from a built-in default if PYTHONPATH is not set. You can modify it using standard list operations::\n\n>>> import sys >>> sys.path.append('/ufs/guido/lib/python')\n\nThe dir Function\n\nThe built-in function dir is used to find out which names a module defines. It returns a sorted list of strings::",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 483
+            },
+            "score": 0.7127211253310486,
+            "strategy": "dense"
+          },
+          {
+            "id": "86367c78-11a2-591c-a429-7886ca55cbeb",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 3,
+            "text": ".. note:: On file systems which support symlinks, the directory containing the input script is calculated after the symlink is followed. In other words the directory containing the symlink is **not** added to the module search path.\n\nAfter initialization, Python programs can modify sys.path. The directory containing the script being run is placed at the beginning of the search path, ahead of the standard library path. This means that scripts in that directory will be loaded instead of modules of the same name in the library directory. This is an error unless the replacement is intended. See section tut-standardmodules for more information.\n\n.. % Do we need stuff on zip files etc. ? DUBOIS\n\n\"Compiled\" Python files",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1550,
+              "end": 2272
+            },
+            "score": 0.6687039613161927,
+            "strategy": "dense"
+          },
+          {
+            "id": "96e5e9e0-a0db-5bf7-b0b0-8c52d315df5d",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 3,
+            "text": "When a module named !spam is imported, the interpreter first searches for a built-in module with that name. These module names are listed in sys.builtin_module_names. If not found, it then searches for a file named spam.py in a list of directories given by the variable sys.path. sys.path is initialized from these locations:\n\n* The directory containing the input script (or the current directory when no file is specified). * PYTHONPATH (a list of directory names, with the same syntax as the shell variable PATH). * The installation-dependent default (by convention including a site-packages directory, handled by the site module).\n\nMore details are at sys-path-init.",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 879,
+              "end": 1548
+            },
+            "score": 0.5542165170877693,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[17e59d32-4377-5a79-a4fa-0a379e2bd091 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst | page 3]\nTo speed up loading modules, Python caches the compiled version of each module in the __pycache__ directory under the name module.{version}.pyc, where the version encodes the format of the compiled file; it generally contains the Python version number. For example, in CPython release 3.3 the compiled version of spam.py would be cached as __pycache__/spam.cpython-33.pyc. This naming convention allows compiled modules from different releases and different versions of Python to coexist.",
+        "context_ids": [
+          "17e59d32-4377-5a79-a4fa-0a379e2bd091"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 4.533
+  },
+  {
+    "query_id": "q12",
+    "status": "answered",
+    "answer": "Không, tệp .pyc giúp tăng tốc độ tải các mô-đun chứ không làm cho chương trình thực thi nhanh hơn so với tệp .py [17e59d32-4377-5a79-a4fa-0a379e2bd091].",
+    "citations": [
+      "17e59d32-4377-5a79-a4fa-0a379e2bd091"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": ".pyc file execution speed compared to .py",
+        "filter": null,
+        "results": [
+          {
+            "id": "46d163e2-bee0-5a19-80c2-56897f16417b",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 4,
+            "text": "* You can use the -O or -OO switches on the Python command to reduce the size of a compiled module. The -O switch removes assert statements, the -OO switch removes both assert statements and __doc__ strings. Since some programs may rely on having these available, you should only use this option if you know what you're doing. \"Optimized\" modules have an opt- tag and are usually smaller. Future releases may change the effects of optimization.\n\n* A program doesn't run any faster when it is read from a .pyc file than when it is read from a .py file; the only thing that's faster about .pyc files is the speed with which they are loaded.\n\n* The module compileall can create .pyc files for all modules in a directory.\n\n* There is more detail on this process, including a flow chart of the decisions, in 3147.\n\nStandard Modules\n\n.. index:: pair: module; sys",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 716,
+              "end": 1572
+            },
+            "score": 0.7137547923266809,
+            "strategy": "dense"
+          },
+          {
+            "id": "17e59d32-4377-5a79-a4fa-0a379e2bd091",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 3,
+            "text": "To speed up loading modules, Python caches the compiled version of each module in the __pycache__ directory under the name module.{version}.pyc, where the version encodes the format of the compiled file; it generally contains the Python version number. For example, in CPython release 3.3 the compiled version of spam.py would be cached as __pycache__/spam.cpython-33.pyc. This naming convention allows compiled modules from different releases and different versions of Python to coexist.",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2274,
+              "end": 2762
+            },
+            "score": 0.5721614104244945,
+            "strategy": "dense"
+          },
+          {
+            "id": "3163d2ca-c12c-5b05-a435-103f6165b34f",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 4,
+            "text": "Python checks the modification date of the source against the compiled version to see if it's out of date and needs to be recompiled. This is a completely automatic process. Also, the compiled modules are platform-independent, so the same library can be shared among systems with different architectures.\n\nPython does not check the cache in two circumstances. First, it always recompiles and does not store the result for the module that's loaded directly from the command line. Second, it does not check the cache if there is no source module. To support a non-source (compiled only) distribution, the compiled module must be in the source directory, and there must not be a source module.\n\nSome tips for experts:",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 714
+            },
+            "score": 0.409675285496802,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[17e59d32-4377-5a79-a4fa-0a379e2bd091 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst | page 3]\nTo speed up loading modules, Python caches the compiled version of each module in the __pycache__ directory under the name module.{version}.pyc, where the version encodes the format of the compiled file; it generally contains the Python version number. For example, in CPython release 3.3 the compiled version of spam.py would be cached as __pycache__/spam.cpython-33.pyc. This naming convention allows compiled modules from different releases and different versions of Python to coexist.",
+        "context_ids": [
+          "17e59d32-4377-5a79-a4fa-0a379e2bd091"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_sec": 3.567
+  },
+  {
+    "query_id": "q13",
+    "status": "answered",
+    "answer": "UTF-8 is recommended as the text-file encoding unless you know that you need to use a different encoding [dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d].",
+    "citations": [
+      "dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "text-file encoding recommended",
+        "filter": null,
+        "results": [
+          {
+            "id": "dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d",
+            "source_id": "inputoutput",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/inputoutput.rst",
+            "page": 5,
+            "text": "Normally, files are opened in text mode, that means, you read and write strings from and to the file, which are encoded in a specific *encoding*. If *encoding* is not specified, the default is platform dependent (see open). Because UTF-8 is the modern de-facto standard, encoding=\"utf-8\" is recommended unless you know that you need to use a different encoding. Appending a 'b' to the mode opens the file in binary mode. Binary mode data is read and written as bytes objects. You can not specify *encoding* when opening file in binary mode.",
+            "metadata": {
+              "section": "Input and Output",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 540
+            },
+            "score": 0.647904146158115,
+            "strategy": "dense"
+          },
+          {
+            "id": "1e4b38d0-f6ad-584a-922a-895adb3aa2fb",
+            "source_id": "inputoutput",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/inputoutput.rst",
+            "page": 5,
+            "text": "In text mode, the default when reading is to convert platform-specific line endings (\\n on Unix, \\r\\n on Windows) to just \\n. When writing in text mode, the default is to convert occurrences of \\n back to platform-specific line endings. This behind-the-scenes modification to file data is fine for text files, but will corrupt binary data like that in JPEG or EXE files. Be very careful to use binary mode when reading and writing such files.\n\nIt is good practice to use the with keyword when dealing with file objects. The advantage is that the file is properly closed after its suite finishes, even if an exception is raised at some point. Using !with is also much shorter than writing equivalent try\\ -\\ finally blocks::\n\n>>> with open('workfile', encoding=\"utf-8\") as f: ... read_data = f.read()\n\n>>> # We can check that the file has been automatically closed. >>> f.closed True",
+            "metadata": {
+              "section": "Input and Output",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 542,
+              "end": 1424
+            },
+            "score": 0.43368883138339376,
+            "strategy": "dense"
+          },
+          {
+            "id": "5f94f23b-b381-58e1-871c-6715154d8a6e",
+            "source_id": "inputoutput",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/inputoutput.rst",
+            "page": 6,
+            "text": "In text files (those opened without a b in the mode string), only seeks relative to the beginning of the file are allowed (the exception being seeking to the very file end with seek(0, 2)) and the only valid *offset* values are those returned from the f.tell(), or zero. Any other *offset* value produces undefined behaviour.\n\nFile objects have some additional methods, such as ~io.IOBase.isatty and ~io.IOBase.truncate which are less frequently used; consult the Library Reference for a complete guide to file objects.",
+            "metadata": {
+              "section": "Input and Output",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2169,
+              "end": 2688
+            },
+            "score": 0.34091571307792956,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/inputoutput.rst | page 5]\nNormally, files are opened in text mode, that means, you read and write strings from and to the file, which are encoded in a specific *encoding*. If *encoding* is not specified, the default is platform dependent (see open). Because UTF-8 is the modern de-facto standard, encoding=\"utf-8\" is recommended unless you know that you need to use a different encoding. Appending a 'b' to the mode opens the file in binary mode. Binary mode data is read and written as bytes objects. You can not specify *encoding* when opening file in binary mode.",
+        "context_ids": [
+          "dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_sec": 6.863
+  },
+  {
+    "query_id": "q14",
+    "status": "error",
+    "error": "Gemini API failed after 3 attempts: Gemini API HTTP 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceede",
+    "events": [],
+    "citations": [],
+    "elapsed_sec": 11.292
+  },
+  {
+    "query_id": "q15",
+    "status": "answered",
+    "answer": "UTF-8 is the modern de-facto standard, and encoding=\"utf-8\" is recommended when opening JSON text files (or files in general) unless a different encoding is specifically needed [dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d].",
+    "citations": [
+      "dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d"
+    ],
+    "events": [
+      {
+        "event": "search",
+        "query": "JSON text files encoding reading writing",
+        "filter": null,
+        "results": [
+          {
+            "id": "042f858c-1d00-51d9-9eba-0baceaba0645",
+            "source_id": "inputoutput",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/inputoutput.rst",
+            "page": 7,
+            "text": "If you have an object x, you can view its JSON string representation with a simple line of code::\n\n>>> import json >>> x = [1, 'simple', 'list'] >>> json.dumps(x) '[1, \"simple\", \"list\"]'\n\nAnother variant of the ~json.dumps function, called ~json.dump, simply serializes the object to a text file. So if f is a text file object opened for writing, we can do this::\n\njson.dump(x, f)\n\nTo decode the object again, if f is a binary file or text file object which has been opened for reading::\n\nx = json.load(f)\n\n.. note:: JSON files must be encoded in UTF-8. Use encoding=\"utf-8\" when opening JSON file as a text file for both of reading and writing.\n\nThis simple serialization technique can handle lists and dictionaries, but serializing arbitrary class instances in JSON requires a bit of extra effort. The reference for the json module contains an explanation of this.\n\n.. seealso::",
+            "metadata": {
+              "section": "Input and Output",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1289,
+              "end": 2169
+            },
+            "score": 0.5851164396726198,
+            "strategy": "dense"
+          },
+          {
+            "id": "49cebb0b-c386-5a43-890a-cce096012769",
+            "source_id": "inputoutput",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/inputoutput.rst",
+            "page": 7,
+            "text": "Rather than having users constantly writing and debugging code to save complicated data types to files, Python allows you to use the popular data interchange format called `JSON (JavaScript Object Notation) <https://json.org>`_. The standard module called json can take Python data hierarchies, and convert them to string representations; this process is called serializing. Reconstructing the data from the string representation is called deserializing. Between serializing and deserializing, the string representing the object may have been stored in a file or data, or sent over a network connection to some distant machine.\n\n.. note:: The JSON format is commonly used by modern applications to allow for data exchange. Many programmers are already familiar with it, which makes it a good choice for interoperability.",
+            "metadata": {
+              "section": "Input and Output",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 467,
+              "end": 1287
+            },
+            "score": 0.5453958357895187,
+            "strategy": "dense"
+          },
+          {
+            "id": "dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d",
+            "source_id": "inputoutput",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/inputoutput.rst",
+            "page": 5,
+            "text": "Normally, files are opened in text mode, that means, you read and write strings from and to the file, which are encoded in a specific *encoding*. If *encoding* is not specified, the default is platform dependent (see open). Because UTF-8 is the modern de-facto standard, encoding=\"utf-8\" is recommended unless you know that you need to use a different encoding. Appending a 'b' to the mode opens the file in binary mode. Binary mode data is read and written as bytes objects. You can not specify *encoding* when opening file in binary mode.",
+            "metadata": {
+              "section": "Input and Output",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 540
+            },
+            "score": 0.5369167687507638,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/inputoutput.rst | page 5]\nNormally, files are opened in text mode, that means, you read and write strings from and to the file, which are encoded in a specific *encoding*. If *encoding* is not specified, the default is platform dependent (see open). Because UTF-8 is the modern de-facto standard, encoding=\"utf-8\" is recommended unless you know that you need to use a different encoding. Appending a 'b' to the mode opens the file in binary mode. Binary mode data is read and written as bytes objects. You can not specify *encoding* when opening file in binary mode.",
+        "context_ids": [
+          "dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d"
+        ]
+      },
+      {
+        "event": "answer"
+      }
+    ],
+    "elapsed_sec": 4.212
+  },
+  {
+    "query_id": "q_unans_dev1",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "disable Global Interpreter Lock GIL runtime Python 3.13 free threaded",
+        "filter": null,
+        "results": [
+          {
+            "id": "1799f3c3-b53b-5769-b5f5-a654f3b132c5",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 4,
+            "text": "Python comes with a library of standard modules, described in a separate document, the Python Library Reference (\"Library Reference\" hereafter). Some modules are built into the interpreter; these provide access to operations that are not part of the core of the language but are nevertheless built in, either for efficiency or to provide access to operating system primitives such as system calls. The set of such modules is a configuration option which also depends on the underlying platform. For example, the winreg module is only provided on Windows systems. One particular module deserves some attention: sys, which is built into every Python interpreter. The variables sys.ps1 and sys.ps2 define the strings used as primary and secondary prompts::\n\n>>> import sys >>> sys.ps1 '>>> ' >>> sys.ps2 '... ' >>> sys.ps1 = 'C> ' C> print('Yuck!') Yuck! C>",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1574,
+              "end": 2428
+            },
+            "score": 0.3629014225912113,
+            "strategy": "dense"
+          },
+          {
+            "id": "ec7b4353-eba8-56d5-a42a-f802e790d09d",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 1,
+            "text": "Modules\n\nIf you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Therefore, if you want to write a somewhat longer program, you are better off using a text editor to prepare the input for the interpreter and running it with that file as input instead. This is known as creating a *script*. As your program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a handy function that you've written in several programs without copying its definition into each program.",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 588
+            },
+            "score": 0.3550075340148827,
+            "strategy": "dense"
+          },
+          {
+            "id": "d11e965f-4fb6-5127-aac7-a79ce94c1f45",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 4,
+            "text": "The global statement can be used to indicate that particular variables live in the global scope and should be rebound there; the nonlocal statement indicates that particular variables live in an enclosing scope and should be rebound there.\n\nScopes and Namespaces Example\n\nThis is an example demonstrating how to reference the different scopes and namespaces, and how global and nonlocal affect variable binding::\n\ndef scope_test(): def do_local(): spam = \"local spam\"\n\ndef do_nonlocal(): nonlocal spam spam = \"nonlocal spam\"\n\ndef do_global(): global spam spam = \"global spam\"\n\nspam = \"test spam\" do_local() print(\"After local assignment:\", spam) do_nonlocal() print(\"After nonlocal assignment:\", spam) do_global() print(\"After global assignment:\", spam)\n\nscope_test() print(\"In global scope:\", spam)\n\nThe output of the example code is:\n\n.. code-block:: none",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 857
+            },
+            "score": 0.340150652378499,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[ec7b4353-eba8-56d5-a42a-f802e790d09d | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst | page 1]\nModules\n\nIf you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Therefore, if you want to write a somewhat longer program, you are better off using a text editor to prepare the input for the interpreter and running it with that file as input instead. This is known as creating a *script*. As your program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a handy function that you've written in several programs without copying its definition into each program.",
+        "context_ids": [
+          "ec7b4353-eba8-56d5-a42a-f802e790d09d"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "disable GIL runtime Python 3.13 free-threaded",
+        "filter": null,
+        "results": [
+          {
+            "id": "46d163e2-bee0-5a19-80c2-56897f16417b",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 4,
+            "text": "* You can use the -O or -OO switches on the Python command to reduce the size of a compiled module. The -O switch removes assert statements, the -OO switch removes both assert statements and __doc__ strings. Since some programs may rely on having these available, you should only use this option if you know what you're doing. \"Optimized\" modules have an opt- tag and are usually smaller. Future releases may change the effects of optimization.\n\n* A program doesn't run any faster when it is read from a .pyc file than when it is read from a .py file; the only thing that's faster about .pyc files is the speed with which they are loaded.\n\n* The module compileall can create .pyc files for all modules in a directory.\n\n* There is more detail on this process, including a flow chart of the decisions, in 3147.\n\nStandard Modules\n\n.. index:: pair: module; sys",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 716,
+              "end": 1572
+            },
+            "score": 0.34913352539641623,
+            "strategy": "dense"
+          },
+          {
+            "id": "a5d65508-763a-507d-8d96-6ece3e3e4855",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 5,
+            "text": ">>> import fibo, sys >>> dir(fibo) ['__name__', 'fib', 'fib2'] >>> dir(sys) # doctest: +NORMALIZE_WHITESPACE ['__breakpointhook__', '__displayhook__', '__doc__', '__excepthook__', '__interactivehook__', '__loader__', '__name__', '__package__', '__spec__', '__stderr__', '__stdin__', '__stdout__', '__unraisablehook__', '_clear_type_cache', '_current_frames', '_debugmallocstats', '_framework', '_getframe', '_git', '_home', '_xoptions', 'abiflags', 'addaudithook', 'api_version', 'argv', 'audit', 'base_exec_prefix', 'base_prefix', 'breakpointhook', 'builtin_module_names', 'byteorder', 'call_tracing', 'callstats', 'copyright', 'displayhook', 'dont_write_bytecode', 'exc_info', 'excepthook', 'exec_prefix', 'executable', 'exit', 'flags', 'float_info', 'float_repr_style', 'get_asyncgen_hooks', 'get_coroutine_origin_tracking_depth', 'getallocatedblocks', 'getdefaultencoding', 'getdlopenflags',",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 485,
+              "end": 1380
+            },
+            "score": 0.29456756248211025,
+            "strategy": "dense"
+          },
+          {
+            "id": "17e59d32-4377-5a79-a4fa-0a379e2bd091",
+            "source_id": "modules",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst",
+            "page": 3,
+            "text": "To speed up loading modules, Python caches the compiled version of each module in the __pycache__ directory under the name module.{version}.pyc, where the version encodes the format of the compiled file; it generally contains the Python version number. For example, in CPython release 3.3 the compiled version of spam.py would be cached as __pycache__/spam.cpython-33.pyc. This naming convention allows compiled modules from different releases and different versions of Python to coexist.",
+            "metadata": {
+              "section": "Modules",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 2274,
+              "end": 2762
+            },
+            "score": 0.2867669709218762,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[ec7b4353-eba8-56d5-a42a-f802e790d09d | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/modules.rst | page 1]\nModules\n\nIf you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Therefore, if you want to write a somewhat longer program, you are better off using a text editor to prepare the input for the interpreter and running it with that file as input instead. This is known as creating a *script*. As your program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a handy function that you've written in several programs without copying its definition into each program.",
+        "context_ids": [
+          "ec7b4353-eba8-56d5-a42a-f802e790d09d"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 3.736
+  },
+  {
+    "query_id": "q_unans_dev2",
+    "status": "abstain",
+    "answer": "Không đủ bằng chứng để trả lời.",
+    "citations": [],
+    "events": [
+      {
+        "event": "search",
+        "query": "asynchronous generator function async def yield Python syntax",
+        "filter": null,
+        "results": [
+          {
+            "id": "464c6269-6793-5f78-8bc7-2c6c066ed81e",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 12,
+            "text": ">>> rev = Reverse('spam') >>> iter(rev) <__main__.Reverse object at 0x00A1DB50> >>> for char in rev: ... print(char) ... m a p s\n\nGenerators\n\nGenerators <generator> are a simple and powerful tool for creating iterators. They are written like regular functions but use the yield statement whenever they want to return data. Each time next is called on it, the generator resumes where it left off (it remembers all the data values and which statement was last executed). An example shows that generators can be trivially easy to create::\n\ndef reverse(data): for index in range(len(data)-1, -1, -1): yield data[index]\n\n::\n\n>>> for char in reverse('golf'): ... print(char) ... f l o g",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1683,
+              "end": 2363
+            },
+            "score": 0.49159158142693243,
+            "strategy": "dense"
+          },
+          {
+            "id": "23adc47c-5d0b-59cf-a8f9-010b3470dbc5",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 13,
+            "text": "Another key feature is that the local variables and execution state are automatically saved between calls. This made the function easier to write and much more clear than an approach using instance variables like self.index and self.data.\n\nIn addition to automatic method creation and saving program state, when generators terminate, they automatically raise StopIteration. In combination, these features make it easy to create iterators with no more effort than writing a regular function.\n\nGenerator Expressions",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 513
+            },
+            "score": 0.4485643808107039,
+            "strategy": "dense"
+          },
+          {
+            "id": "61062a83-cf42-5976-ae4d-f2248617bd6d",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 7,
+            "text": "This example, as usual, demonstrates some new Python features:\n\n* The return statement returns with a value from a function. !return without an expression argument returns None. Falling off the end of a function also returns None.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 230
+            },
+            "score": 0.4187223162726533,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[23adc47c-5d0b-59cf-a8f9-010b3470dbc5 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 13]\nAnother key feature is that the local variables and execution state are automatically saved between calls. This made the function easier to write and much more clear than an approach using instance variables like self.index and self.data.\n\nIn addition to automatic method creation and saving program state, when generators terminate, they automatically raise StopIteration. In combination, these features make it easy to create iterators with no more effort than writing a regular function.\n\nGenerator Expressions",
+        "context_ids": [
+          "23adc47c-5d0b-59cf-a8f9-010b3470dbc5"
+        ]
+      },
+      {
+        "event": "search",
+        "query": "asynchronous generator function async def yield Python syntax",
+        "filter": null,
+        "results": [
+          {
+            "id": "464c6269-6793-5f78-8bc7-2c6c066ed81e",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 12,
+            "text": ">>> rev = Reverse('spam') >>> iter(rev) <__main__.Reverse object at 0x00A1DB50> >>> for char in rev: ... print(char) ... m a p s\n\nGenerators\n\nGenerators <generator> are a simple and powerful tool for creating iterators. They are written like regular functions but use the yield statement whenever they want to return data. Each time next is called on it, the generator resumes where it left off (it remembers all the data values and which statement was last executed). An example shows that generators can be trivially easy to create::\n\ndef reverse(data): for index in range(len(data)-1, -1, -1): yield data[index]\n\n::\n\n>>> for char in reverse('golf'): ... print(char) ... f l o g",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 1683,
+              "end": 2363
+            },
+            "score": 0.49159158142693243,
+            "strategy": "dense"
+          },
+          {
+            "id": "23adc47c-5d0b-59cf-a8f9-010b3470dbc5",
+            "source_id": "classes",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst",
+            "page": 13,
+            "text": "Another key feature is that the local variables and execution state are automatically saved between calls. This made the function easier to write and much more clear than an approach using instance variables like self.index and self.data.\n\nIn addition to automatic method creation and saving program state, when generators terminate, they automatically raise StopIteration. In combination, these features make it easy to create iterators with no more effort than writing a regular function.\n\nGenerator Expressions",
+            "metadata": {
+              "section": "Classes",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 513
+            },
+            "score": 0.4485643808107039,
+            "strategy": "dense"
+          },
+          {
+            "id": "61062a83-cf42-5976-ae4d-f2248617bd6d",
+            "source_id": "controlflow",
+            "source": "https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/controlflow.rst",
+            "page": 7,
+            "text": "This example, as usual, demonstrates some new Python features:\n\n* The return statement returns with a value from a function. !return without an expression argument returns None. Falling off the end of a function also returns None.",
+            "metadata": {
+              "section": "More Control Flow Tools",
+              "version": "3.13.0",
+              "language": "en",
+              "chunking": "paragraph",
+              "start": 0,
+              "end": 230
+            },
+            "score": 0.4187223162726533,
+            "strategy": "dense"
+          }
+        ],
+        "context": "[23adc47c-5d0b-59cf-a8f9-010b3470dbc5 | https://raw.githubusercontent.com/python/cpython/v3.13.0/Doc/tutorial/classes.rst | page 13]\nAnother key feature is that the local variables and execution state are automatically saved between calls. This made the function easier to write and much more clear than an approach using instance variables like self.index and self.data.\n\nIn addition to automatic method creation and saving program state, when generators terminate, they automatically raise StopIteration. In combination, these features make it easy to create iterators with no more effort than writing a regular function.\n\nGenerator Expressions",
+        "context_ids": [
+          "23adc47c-5d0b-59cf-a8f9-010b3470dbc5"
+        ]
+      },
+      {
+        "event": "search_limit"
+      }
+    ],
+    "elapsed_sec": 8.149
+  }
+]

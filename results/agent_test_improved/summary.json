@@ -1,0 +1,44 @@
+{
+  "cases": 7,
+  "provider_errors": 0,
+  "tool_use": {
+    "n": 7,
+    "N": 7
+  },
+  "grounded_answer": {
+    "0": 2,
+    "1": 0,
+    "2": 3,
+    "N": 5,
+    "mean": 1.2
+  },
+  "citation_validity": {
+    "n": 3,
+    "N": 3
+  },
+  "answer_citation_coverage": {
+    "n": 3,
+    "N": 3
+  },
+  "abstention": {
+    "n": 2,
+    "N": 2
+  },
+  "false_abstention": {
+    "n": 2,
+    "N": 5
+  },
+  "split": "test",
+  "config": "improved",
+  "budget": 1600,
+  "max_searches": 3,
+  "controller_stats": {
+    "model": "gemini-3.5-flash-lite",
+    "calls": 21,
+    "total_latency_sec": 76.244,
+    "avg_latency_sec": 3.631,
+    "prompt_tokens": 12715,
+    "completion_tokens": 673,
+    "estimated_cost_usd": 0.001156
+  }
+}

@@ -1,0 +1,461 @@
+[
+  {
+    "query_id": "q01",
+    "question": "Does Python range include its stop value?",
+    "hit1": false,
+    "hit3": true,
+    "context_hit": true,
+    "results": [
+      {
+        "id": "c514adbe-31f3-51d7-8bb6-ff08f224a33d",
+        "source": "controlflow",
+        "page": 2,
+        "score": 0.030117753623188408
+      },
+      {
+        "id": "a65a43d6-af7c-5f87-bdcc-a2a13ebd0049",
+        "source": "controlflow",
+        "page": 11,
+        "score": 0.01639344262295082
+      },
+      {
+        "id": "cf7be23a-7374-59e7-959c-f540f33b4073",
+        "source": "controlflow",
+        "page": 1,
+        "score": 0.01639344262295082
+      }
+    ],
+    "context_ids": [
+      "cf7be23a-7374-59e7-959c-f540f33b4073"
+    ],
+    "latency_ms": 71.76170000457205
+  },
+  {
+    "query_id": "q02",
+    "question": "In nested Python loops, which loop does break leave?",
+    "hit1": false,
+    "hit3": false,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "b113da58-005a-5943-9434-93bed8b8e58d",
+        "source": "controlflow",
+        "page": 2,
+        "score": 0.03278688524590164
+      },
+      {
+        "id": "1c4739cb-ace9-53e0-b1e0-103222d1f4a3",
+        "source": "controlflow",
+        "page": 2,
+        "score": 0.03200204813108039
+      },
+      {
+        "id": "724ff3cd-20d7-58b3-909e-d696897cd213",
+        "source": "controlflow",
+        "page": 3,
+        "score": 0.03200204813108039
+      }
+    ],
+    "context_ids": [
+      "1c4739cb-ace9-53e0-b1e0-103222d1f4a3"
+    ],
+    "latency_ms": 112.36030000145547
+  },
+  {
+    "query_id": "q03",
+    "question": "In the More Control Flow Tools chapter, why can a mutable default argument retain data across calls?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true,
+    "results": [
+      {
+        "id": "6b1ffb70-aa31-5125-9142-5ad3e70dffaa",
+        "source": "controlflow",
+        "page": 7,
+        "score": 0.032266458495966696
+      },
+      {
+        "id": "c45fb69c-d381-5c07-9141-1604d9b18809",
+        "source": "classes",
+        "page": 1,
+        "score": 0.02871794871794872
+      },
+      {
+        "id": "e1fbf128-b6dc-5671-8993-053a3170f5c0",
+        "source": "controlflow",
+        "page": 11,
+        "score": 0.028404512489927477
+      }
+    ],
+    "context_ids": [
+      "6b1ffb70-aa31-5125-9142-5ad3e70dffaa"
+    ],
+    "latency_ms": 71.4354999945499
+  },
+  {
+    "query_id": "q04",
+    "question": "How do I mark Python function parameters as keyword-only?",
+    "hit1": false,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "f6b28f21-c2fa-5f1e-a8ca-381c3028532c",
+        "source": "controlflow",
+        "page": 9,
+        "score": 0.03252247488101534
+      },
+      {
+        "id": "e7cdcdc0-7730-5771-962a-ddf807fd0f34",
+        "source": "controlflow",
+        "page": 11,
+        "score": 0.03200204813108039
+      },
+      {
+        "id": "73981aba-435b-5100-936f-9526e6e31b0f",
+        "source": "controlflow",
+        "page": 9,
+        "score": 0.030886196246139225
+      }
+    ],
+    "context_ids": [],
+    "latency_ms": 69.91580000612885
+  },
+  {
+    "query_id": "q05",
+    "question": "What happens if list.remove cannot find the requested value, and which occurrence is removed otherwise?",
+    "hit1": false,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "ddc521c8-9f81-5bba-b03d-a096ea24a475",
+        "source": "datastructures",
+        "page": 4,
+        "score": 0.03278688524590164
+      },
+      {
+        "id": "c1ab5fe5-5f25-5f75-953b-4257c4e6004c",
+        "source": "datastructures",
+        "page": 1,
+        "score": 0.03200204813108039
+      },
+      {
+        "id": "d7b4d671-39f9-5a91-a1f2-d09d6ef6814e",
+        "source": "datastructures",
+        "page": 1,
+        "score": 0.03200204813108039
+      }
+    ],
+    "context_ids": [],
+    "latency_ms": 71.41229999251664
+  },
+  {
+    "query_id": "q06",
+    "question": "What does a.pop() return without an index, and what if the list is empty?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "d7b4d671-39f9-5a91-a1f2-d09d6ef6814e",
+        "source": "datastructures",
+        "page": 1,
+        "score": 0.03252247488101534
+      },
+      {
+        "id": "ddc521c8-9f81-5bba-b03d-a096ea24a475",
+        "source": "datastructures",
+        "page": 4,
+        "score": 0.032018442622950824
+      },
+      {
+        "id": "3acef0c9-1f4d-5e15-a427-e3c789aa130c",
+        "source": "datastructures",
+        "page": 2,
+        "score": 0.03125763125763126
+      }
+    ],
+    "context_ids": [
+      "3acef0c9-1f4d-5e15-a427-e3c789aa130c"
+    ],
+    "latency_ms": 73.13839999551419
+  },
+  {
+    "query_id": "q07",
+    "question": "Can a tuple containing a mutable object be a dictionary key?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "aa5af88c-6cf0-53ce-b91d-d2b9a961c38b",
+        "source": "datastructures",
+        "page": 6,
+        "score": 0.03278688524590164
+      },
+      {
+        "id": "5e888718-3dd3-533b-a6f4-654ed397fff8",
+        "source": "datastructures",
+        "page": 6,
+        "score": 0.03200204813108039
+      },
+      {
+        "id": "0296acff-bacc-5bef-af32-a80729c36b20",
+        "source": "datastructures",
+        "page": 5,
+        "score": 0.03128054740957967
+      }
+    ],
+    "context_ids": [],
+    "latency_ms": 68.74320001224987
+  },
+  {
+    "query_id": "q08",
+    "question": "In the Data Structures chapter, in what order does list(d) return dictionary keys?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true,
+    "results": [
+      {
+        "id": "67cc66e9-81fa-536c-a2b7-8ddf72adb3b3",
+        "source": "datastructures",
+        "page": 6,
+        "score": 0.03278688524590164
+      },
+      {
+        "id": "aa5af88c-6cf0-53ce-b91d-d2b9a961c38b",
+        "source": "datastructures",
+        "page": 6,
+        "score": 0.03225806451612903
+      },
+      {
+        "id": "c1ab5fe5-5f25-5f75-953b-4257c4e6004c",
+        "source": "datastructures",
+        "page": 1,
+        "score": 0.031024531024531024
+      }
+    ],
+    "context_ids": [
+      "67cc66e9-81fa-536c-a2b7-8ddf72adb3b3"
+    ],
+    "latency_ms": 70.05219999700785
+  },
+  {
+    "query_id": "q09",
+    "question": "Which list operations implement pushing and popping a last-in first-out stack?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true,
+    "results": [
+      {
+        "id": "3acef0c9-1f4d-5e15-a427-e3c789aa130c",
+        "source": "datastructures",
+        "page": 2,
+        "score": 0.03278688524590164
+      },
+      {
+        "id": "2edb6c11-a2bb-5823-9a6c-269d53a9bf53",
+        "source": "datastructures",
+        "page": 2,
+        "score": 0.03200204813108039
+      },
+      {
+        "id": "c1ab5fe5-5f25-5f75-953b-4257c4e6004c",
+        "source": "datastructures",
+        "page": 1,
+        "score": 0.030834914611005692
+      }
+    ],
+    "context_ids": [
+      "3acef0c9-1f4d-5e15-a427-e3c789aa130c"
+    ],
+    "latency_ms": 68.34070000331849
+  },
+  {
+    "query_id": "q10",
+    "question": "What is the value of __name__ when a Python module is executed as a script?",
+    "hit1": false,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "48cf042e-3bf5-538b-bac1-86559859f581",
+        "source": "classes",
+        "page": 2,
+        "score": 0.032266458495966696
+      },
+      {
+        "id": "dd45dfb8-41f1-52ed-adcb-96c3977d3396",
+        "source": "modules",
+        "page": 1,
+        "score": 0.031754032258064516
+      },
+      {
+        "id": "23d31aa6-baf4-54ca-a384-9a565facc8e7",
+        "source": "modules",
+        "page": 3,
+        "score": 0.03047794966520434
+      }
+    ],
+    "context_ids": [
+      "48cf042e-3bf5-538b-bac1-86559859f581"
+    ],
+    "latency_ms": 72.48680001066532
+  },
+  {
+    "query_id": "q11",
+    "question": "After checking built-in modules, where does Python search for spam.py?",
+    "hit1": false,
+    "hit3": false,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "17e59d32-4377-5a79-a4fa-0a379e2bd091",
+        "source": "modules",
+        "page": 3,
+        "score": 0.03252247488101534
+      },
+      {
+        "id": "86367c78-11a2-591c-a429-7886ca55cbeb",
+        "source": "modules",
+        "page": 3,
+        "score": 0.031754032258064516
+      },
+      {
+        "id": "9ba9cf7a-bd38-5c3a-b041-9822fe7bcca9",
+        "source": "modules",
+        "page": 5,
+        "score": 0.03149801587301587
+      }
+    ],
+    "context_ids": [
+      "17e59d32-4377-5a79-a4fa-0a379e2bd091"
+    ],
+    "latency_ms": 72.21539999591187
+  },
+  {
+    "query_id": "q12",
+    "question": "Does using a .pyc file make the program execute faster than a .py file?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "46d163e2-bee0-5a19-80c2-56897f16417b",
+        "source": "modules",
+        "page": 4,
+        "score": 0.03278688524590164
+      },
+      {
+        "id": "17e59d32-4377-5a79-a4fa-0a379e2bd091",
+        "source": "modules",
+        "page": 3,
+        "score": 0.03200204813108039
+      },
+      {
+        "id": "ec7b4353-eba8-56d5-a42a-f802e790d09d",
+        "source": "modules",
+        "page": 1,
+        "score": 0.029910714285714284
+      }
+    ],
+    "context_ids": [
+      "17e59d32-4377-5a79-a4fa-0a379e2bd091"
+    ],
+    "latency_ms": 70.4291000001831
+  },
+  {
+    "query_id": "q13",
+    "question": "Which text-file encoding is recommended unless a different encoding is needed?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": true,
+    "results": [
+      {
+        "id": "dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d",
+        "source": "inputoutput",
+        "page": 5,
+        "score": 0.03278688524590164
+      },
+      {
+        "id": "1e4b38d0-f6ad-584a-922a-895adb3aa2fb",
+        "source": "inputoutput",
+        "page": 5,
+        "score": 0.03200204813108039
+      },
+      {
+        "id": "5f94f23b-b381-58e1-871c-6715154d8a6e",
+        "source": "inputoutput",
+        "page": 6,
+        "score": 0.03057889822595705
+      }
+    ],
+    "context_ids": [
+      "dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d"
+    ],
+    "latency_ms": 69.01870000001509
+  },
+  {
+    "query_id": "q14",
+    "question": "In the Input and Output chapter, why use with for a file if an exception might occur?",
+    "hit1": false,
+    "hit3": false,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "ebae0865-a2da-5af9-a247-0a0713bb6651",
+        "source": "errors",
+        "page": 5,
+        "score": 0.03177805800756621
+      },
+      {
+        "id": "0f378682-aa24-5522-87f0-cd0d9973fd9a",
+        "source": "errors",
+        "page": 4,
+        "score": 0.03007688828584351
+      },
+      {
+        "id": "cbd62b0b-f04e-52a5-af10-1ec884ba2f5d",
+        "source": "errors",
+        "page": 2,
+        "score": 0.0293236301369863
+      }
+    ],
+    "context_ids": [
+      "0f378682-aa24-5522-87f0-cd0d9973fd9a"
+    ],
+    "latency_ms": 70.20360000024084
+  },
+  {
+    "query_id": "q15",
+    "question": "What encoding must JSON text files use when opening them for reading and writing?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "042f858c-1d00-51d9-9eba-0baceaba0645",
+        "source": "inputoutput",
+        "page": 7,
+        "score": 0.03252247488101534
+      },
+      {
+        "id": "dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d",
+        "source": "inputoutput",
+        "page": 5,
+        "score": 0.032266458495966696
+      },
+      {
+        "id": "1e4b38d0-f6ad-584a-922a-895adb3aa2fb",
+        "source": "inputoutput",
+        "page": 5,
+        "score": 0.0315136476426799
+      }
+    ],
+    "context_ids": [
+      "dc3d5526-e1a2-5044-aa21-7fbc0cd01c5d"
+    ],
+    "latency_ms": 68.91129999712575
+  }
+]

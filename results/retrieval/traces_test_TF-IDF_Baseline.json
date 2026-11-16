@@ -1,0 +1,151 @@
+[
+  {
+    "query_id": "q16",
+    "question": "In the Errors and Exceptions chapter, when does the optional else clause of try-except execute?",
+    "hit1": false,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "cbd62b0b-f04e-52a5-af10-1ec884ba2f5d",
+        "source": "errors",
+        "page": 2,
+        "score": 0.3804165735431618
+      },
+      {
+        "id": "d3017c95-6278-512c-a91e-5b2c6017afab",
+        "source": "errors",
+        "page": 3,
+        "score": 0.3305232322053801
+      },
+      {
+        "id": "3edb80d2-11e0-5ee2-9fb3-b3b4a8e73ceb",
+        "source": "errors",
+        "page": 2,
+        "score": 0.3067224718849243
+      }
+    ],
+    "context_ids": [],
+    "latency_ms": 1.065999997081235
+  },
+  {
+    "query_id": "q17",
+    "question": "If a try block raises an unhandled exception, does finally run before the exception is re-raised?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "ebae0865-a2da-5af9-a247-0a0713bb6651",
+        "source": "errors",
+        "page": 5,
+        "score": 0.4226776493234833
+      },
+      {
+        "id": "cbd62b0b-f04e-52a5-af10-1ec884ba2f5d",
+        "source": "errors",
+        "page": 2,
+        "score": 0.3014618061700625
+      },
+      {
+        "id": "226250e9-3489-59ec-b98c-73bc463f5cd5",
+        "source": "errors",
+        "page": 4,
+        "score": 0.2992784465140922
+      }
+    ],
+    "context_ids": [],
+    "latency_ms": 0.9064000041689724
+  },
+  {
+    "query_id": "q18",
+    "question": "In the Classes chapter, how do instance variables differ from class variables in what they share?",
+    "hit1": true,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "3e7839a6-f2d3-591e-9457-f668bdcc89c5",
+        "source": "classes",
+        "page": 6,
+        "score": 0.24886496534474473
+      },
+      {
+        "id": "e5cc7fd6-74b9-50c4-a7b0-ea45cf6a99f6",
+        "source": "classes",
+        "page": 5,
+        "score": 0.20242170678262236
+      },
+      {
+        "id": "0536abbd-7937-5f2d-9541-84725d6bcca9",
+        "source": "controlflow",
+        "page": 6,
+        "score": 0.16548990522283244
+      }
+    ],
+    "context_ids": [
+      "e5cc7fd6-74b9-50c4-a7b0-ea45cf6a99f6"
+    ],
+    "latency_ms": 0.8357000042451546
+  },
+  {
+    "query_id": "q19",
+    "question": "Does Python provide instance variables accessible only from inside an object, and what does a single leading underscore mean?",
+    "hit1": false,
+    "hit3": true,
+    "context_hit": true,
+    "results": [
+      {
+        "id": "3e7839a6-f2d3-591e-9457-f668bdcc89c5",
+        "source": "classes",
+        "page": 6,
+        "score": 0.208833901362261
+      },
+      {
+        "id": "f79b8447-5984-5df4-b0f1-b5d48803d927",
+        "source": "classes",
+        "page": 10,
+        "score": 0.19879805250263127
+      },
+      {
+        "id": "28fba424-bad9-56f2-a56e-295a848d3dff",
+        "source": "classes",
+        "page": 3,
+        "score": 0.1537600739356112
+      }
+    ],
+    "context_ids": [
+      "f79b8447-5984-5df4-b0f1-b5d48803d927"
+    ],
+    "latency_ms": 0.7933000015327707
+  },
+  {
+    "query_id": "q20",
+    "question": "Which exception does an exhausted Python iterator raise to terminate a for loop?",
+    "hit1": false,
+    "hit3": true,
+    "context_hit": false,
+    "results": [
+      {
+        "id": "226250e9-3489-59ec-b98c-73bc463f5cd5",
+        "source": "errors",
+        "page": 4,
+        "score": 0.2809325348621115
+      },
+      {
+        "id": "37ebb14c-e66a-5843-8768-a58f526220d5",
+        "source": "classes",
+        "page": 12,
+        "score": 0.2791234949760274
+      },
+      {
+        "id": "ec1cd4d7-b3ad-5bee-bdfa-8d99a72be59d",
+        "source": "errors",
+        "page": 3,
+        "score": 0.1950931557612117
+      }
+    ],
+    "context_ids": [],
+    "latency_ms": 0.6120999896666035
+  }
+]
